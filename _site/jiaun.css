@@ -1,0 +1,23 @@
+@charset "utf-8";
+.container {
+	max-width: 1100px;
+}
+.bg-dark{background-color:#252727}
+.bg-warning{
+	background-color:#029bf4;
+}
+.bg-openmmlab{
+	background-color:#029bf4;
+}
+p{
+	font-size: 20px;
+}
+
+img1 {
+	padding-top: 25px;
+}
+h2 {
+	font-size:1.7em;
+}
+
+	

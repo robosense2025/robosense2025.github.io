@@ -1,0 +1,6 @@
+/* Show it is fixed to the top */
+
+body {
+    /* min-height: 70px; */
+    padding-top: 70px;
+}
