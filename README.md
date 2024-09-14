@@ -1,1 +1,1 @@
-# RoboDrive Competition @ ICRA 2024
+# RoboSense Challenge @ ICRA 2025
