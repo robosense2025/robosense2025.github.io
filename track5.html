@@ -177,23 +177,61 @@
 
           <h2 class="title is-3">🗂️ Phases & Requirements</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
-            <h4 class="title is-4">Phase 1: xxx</h4>
+          
+            <h4 class="title is-4">Phase 1: Vehicle → Drone Adaptation</h4>
             <p>
-              This phase ...
+              <strong>Duration:</strong> 15 June 2025 – 15 August 2025
             </p>
-
-            <h4 class="title is-4">Phase 2: xxx</h4>
             <p>
-              This phase ...
+              <strong>Setup:</strong>
             </p>
+            <ul>
+              <li><strong>Source platform:</strong> Vehicle LiDAR scans <strong>with</strong> 3D bounding-box annotations</li>
+              <li><strong>Target platform:</strong> Unlabeled Drone LiDAR scans</li>
+            </ul>
+            <p>
+              <strong>Ranking Metric:</strong> AP@0.50 (R40) for the <strong>Car</strong> class evaluated on Drone data
+            </p>
+          
+            <hr>
+          
+            <h4 class="title is-4">Phase 2: Vehicle → Drone &amp; Quadruped Adaptation</h4>
+            <p>
+              <strong>Duration:</strong> 15 August 2025 – 15 October 2025
+            </p>
+            <p>
+              <strong>Setup:</strong>
+            </p>
+            <ul>
+              <li><strong>Source platform:</strong> Vehicle LiDAR scans with annotations</li>
+              <li><strong>Target platforms:</strong> Unlabeled Drone and Quadruped LiDAR scans</li>
+            </ul>
+            <p>
+              <strong>Ranking Metric:</strong> Weighted score combining:
+            </p>
+            <ul>
+              <li>AP@0.50 (R40) for the <strong>Car</strong> class</li>
+              <li>AP@0.25 (R40) for the <strong>Pedestrian</strong> class</li>
+            </ul>
+            <p>
+              (Scores computed across both Drone and Quadruped platforms.)
+            </p>
+          
           </div>
+          
 
           <hr>
 
           <h2 class="title is-3">🚗 Dataset Examples</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
-              In this track ...
+              <img src="./images/track5/data_example1.png" alt="Track 5 Image" class="img-hover-effect" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            </p>
+            <p>
+              <img src="./images/track5/data_example2.png" alt="Track 5 Image" class="img-hover-effect" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            </p>
+            <p>
+              <img src="./images/track5/data_example3.png" alt="Track 5 Image" class="img-hover-effect" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
             </p>
           </div>
 
@@ -202,9 +240,29 @@
           <h2 class="title is-3">🛠️ Baseline Model</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
-              In this track, we use ...
+              In this track, we adopt 
+              <a href="https://arxiv.org/abs/1912.13192" target="_blank" rel="noopener noreferrer">
+                <strong>PV-RCNN</strong>
+              </a> 
+              as the base 3D detector, and leverage 
+              <a href="https://github.com/CVMI-Lab/ST3D" target="_blank" rel="noopener noreferrer">
+                <strong>ST3D/++</strong>
+              </a> 
+              as our baseline adaptation framework. Detailed environment setup and experimental protocols can be found in the 
+              <a href="https://github.com/robosense2025/track5" target="_blank" rel="noopener noreferrer">
+                <strong>Track5 GitHub repository</strong>
+              </a>.
             </p>
+            <p>
+              Beyond the provided baseline, participants are encouraged to explore alternative strategies to further boost cross-platform performance:
+            </p>
+            <ul>
+              <li>Treat the cross-platform challenge as a domain adaptation problem by improving pseudo-label quality and fine-tuning on target-platform data.</li>
+              <li>Design novel data augmentation techniques to bridge geometric and feature discrepancies across platforms.</li>
+              <li>Adopt geometry-agnostic 3D detectors, such as point-based architectures, that are less sensitive to platform-specific point-cloud characteristics.</li>
+            </ul>
           </div>
+          
 
           <hr>
 
