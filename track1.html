@@ -145,12 +145,18 @@
         <div class="column is-full-width left">
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
+              <img src="./images/track1/teaser.png" alt="Track 1 Image" class="img-hover-effect" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            </p>
+            <p>
               👋 Welcome to <strong>Track <a style="color: #76b900;">#1</a>: Driving with Language</strong> of the <a href="https://robosense2025.github.io/" target="_blank"><strong>2025 RoboSense Challenge</strong></a>!
             </p>
             <p>
               In the era of autonomous driving, it is increasingly critical for intelligent agents to understand and act upon language-based instructions. 
-              Human drivers naturally interpret complex commands involving spatial, semantic, and temporal cues (e.g., “turn left after the red truck” or “stop at the next gas station on your right”). 
+              Human drivers naturally interpret complex commands involving spatial, semantic, and temporal cues (e.g., "turn left after the red truck" or "stop at the next gas station on your right"). 
               To enable such capabilities in autonomous systems, vision-language models (VLMs) must be able to perceive dynamic driving scenes, understand natural language commands, and make informed driving decisions accordingly.
+            </p>
+            <p>
+              🏆 Prize Pool: $2,000 USD (1st: $1,000, 2nd: $600, 3rd: $400) + Innovation Awards
             </p>
           </div>
 
@@ -158,9 +164,8 @@
 
           <h2 class="title is-3">🎯 Objective</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
-            <p>
-              This track evaluates the capability of VLMs to follow high-level driving instructions in complex urban environments. 
-              Given a short natural language command and a multi-view perception input, participants are expected to ...
+            <p style="font-size: 1rem; line-height: 1.6; color: #34495e;">
+              This track evaluates the capability of VLMs to answer high-level driving questions in complex urban environments. Given question including perception, prediction, and planning, and a multi-view camera input, participants are expected to answer the question given the visual corrupted images.
             </p>
           </div>
 
@@ -168,15 +173,48 @@
 
           <h2 class="title is-3">🗂️ Phases & Requirements</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
-            <h4 class="title is-4">Phase 1: xxx</h4>
+          
+            <h4 class="title is-4">Phase 1: Clean Image Evaluation</h4>
             <p>
-              This phase ...
+              <strong>Duration:</strong> 15 June 2025 – 15 August 2025
             </p>
-
-            <h4 class="title is-4">Phase 2: xxx</h4>
             <p>
-              This phase ...
+              In this phase, participants are expected to answer the high-level driving questions given the clean images. Participants can:
+              - Fine-tune the VLM on custom datasets (including nuScenes, DriveBench, etc.)
+              - Develop and test their approaches 
+              - Submit results as a json file
+              - Iterate and improve their models based on public leaderboard feedback
+            <p>
+              <strong>Ranking Metric:</strong> Weighted score combining:
             </p>
+            <ul>
+              <li>Accuracy</li>
+              <li>Language-based score</li>
+              <li>LLM-based score</li>
+            </ul>
+            </p>
+          
+            <hr>
+          
+            <h4 class="title is-4">Phase 2: Corruption Image Evaluation</h4>
+            <p>
+              <strong>Duration:</strong> 15 August 2025 – 15 October 2025
+            </p>
+            <p>
+              In this phase, participants are expected to answer the high-level driving questions given the corrupted images. Participants can:
+              - Fine-tune the VLM on custom datasets (including nuScenes, DriveBench, etc.)
+              - Develop and test their approaches 
+              - Submit results as a json file
+              - Iterate and improve their models based on public leaderboard feedback
+            </ul>
+            <p>
+              <strong>Ranking Metric:</strong> Weighted score combining:
+            </p>
+            <ul>
+              <li>Accuracy</li>
+              <li>Language-based score</li>
+              <li>LLM-based score</li>
+            </ul>
           </div>
 
           <hr>
@@ -184,7 +222,16 @@
           <h2 class="title is-3">🚗 Dataset Examples</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
-              In this track ...
+              <img src="./images/track1/data_example1.png" alt="Track 1 Image" class="img-hover-effect" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            </p>
+            <p>
+              <img src="./images/track1/data_example2.png" alt="Track 1 Image" class="img-hover-effect" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            </p>
+            <p>
+              <img src="./images/track1/data_example3.png" alt="Track 1 Image" class="img-hover-effect" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            </p>
+            <p>
+              <img src="./images/track1/data_example4.png" alt="Track 1 Image" class="img-hover-effect" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
             </p>
           </div>
 
@@ -193,8 +240,15 @@
           <h2 class="title is-3">🛠️ Baseline Model</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
-              In this track, we use ...
+              In this track, we adopt Qwen2.5-VL<sub>7B</sub> as our baseline model. Beyond the provided baseline, participants are encouraged to explore alternative strategies to further boost performance:
             </p>
+            <ul>
+              <li>Retrieval-augmented reasoning</li>
+              <li>Multi-frame visual reasoning</li>
+              <li>Chain-of-thought reasoning</li>
+              <li>Graph-based reasoning</li>
+              <li>Vision-based object reference prompting</li>
+            </ul>
           </div>
 
           <hr>
@@ -246,16 +300,20 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td>GitHub</td>
+                    <td><strong>GitHub</strong></td>
                     <td><a href="https://github.com/robosense2025/track1" target="_blank">https://github.com/robosense2025/track1</a><td>
                   </tr>
                   <tr>
-                    <td>Checkpoint<td>
-                    <td></td>
+                    <td><strong>Dataset</strong></td>
+                    <td>TBD</td>
                   </tr>
                   <tr>
-                    <td>...<td>
-                    <td></td>
+                    <td><strong>Registration</strong></td>
+                    <td><a href="https://docs.google.com/forms/d/e/1FAIpQLSdwfvk-NHdQh9-REiBLCjHMcyLT-sPCOCzJU-ux5jbcZLTkBg/viewform?usp=sharing&ouid=111184461807593368933" target="_blank">Google Form</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Evaluation Server</strong></td>
+                    <td>TBD</td>
                   </tr>
                 </tbody>
               </table>
