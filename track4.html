@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="">
-  <meta name="keywords" content="3D Scene Understanding, 3D Visual Grounding">
+  <meta name="description" content="RoboSense Track 4: Cross-Modal Drone Navigation Challenge">
+  <meta name="keywords" content="Cross-Modal, Drone Navigation, Computer Vision, Natural Language Processing">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>RoboSense: Track 4</title>
 
@@ -64,11 +64,7 @@
 
 </head>
 
-
-
-
 <body>
-
 
   <button onclick="scrollToTop()" id="backToTopBtn" title="Go to top">↑</button>
   <script>
@@ -123,20 +119,22 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title">
-              <i class="fas fa fa-binoculars fa-2x" style="color: #76b900; margin-bottom: 12px;"></i>
+              <i class="fas fa-drone fa-2x" style="color: #76b900; margin-bottom: 12px;"></i>
               <br>
               The <a style="color: #ffc000;">Robo</a><a style="color: #76b900;">Sense</a> Challenge 2025
             </h1>
             <h2 class="title is-2 publication-title">
               Track <a style="color: #76b900;">#4</a>: Cross-Modal Drone Navigation
             </h2>
+            <h3 class="title is-4 publication-title" style="color: #666;">
+              Natural Language-Guided Cross-View Image Retrieval
+            </h3>
           </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-
 
   <section class="section" style="margin-top: 0px;">
     <div class="container is-max-desktop">
@@ -148,7 +146,10 @@
               👋 Welcome to <strong>Track <a style="color: #76b900;">#4</a>: Cross-Modal Drone Navigation</strong> of the <a href="https://robosense2025.github.io/" target="_blank"><strong>2025 RoboSense Challenge</strong></a>!
             </p>
             <p>
-              ...
+              This track focuses on developing robust models for <strong>natural language-guided cross-view image retrieval</strong>, specifically designed for scenarios where input data is captured from drastically different viewpoints such as aerial (drone or satellite) and ground-level perspectives. Participants will tackle the challenge of creating systems that can effectively retrieve corresponding images from large-scale cross-view databases based on natural language text descriptions, even under common corruptions such as blurriness, occlusions, or sensory noise.
+            </p>
+            <p>
+              🏆 <strong>Prize Pool</strong>: $2,000 USD (1st: $1,000, 2nd: $600, 3rd: $400) + Innovation Awards
             </p>
           </div>
 
@@ -157,7 +158,16 @@
           <h2 class="title is-3">🎯 Objective</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
-              This track evaluates the capability of  ...
+              This track evaluates the capability of vision-language models to perform cross-modal drone navigation through natural language-guided image retrieval. The key challenges include:
+            </p>
+            <ul>
+              <li><strong>Cross-View Matching</strong>: Retrieve corresponding images across drastically different viewpoints (aerial drone/satellite vs. ground-level)</li>
+              <li><strong>Natural Language Understanding</strong>: Process and interpret natural language descriptions to guide image retrieval</li>
+              <li><strong>Robustness</strong>: Maintain performance under real-world corruptions including blurriness, occlusions, and sensor noise</li>
+              <li><strong>Multi-Platform Support</strong>: Handle imagery from multiple platforms including drone, satellite, and ground cameras</li>
+            </ul>
+            <p>
+              The ultimate goal is to develop models that can enable intuitive drone navigation through natural language commands while being robust to real-world sensing conditions.
             </p>
           </div>
 
@@ -165,24 +175,114 @@
 
           <h2 class="title is-3">🗂️ Phases & Requirements</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
-            <h4 class="title is-4">Phase 1: xxx</h4>
+            <h4 class="title is-4">Phase I: Public Evaluation</h4>
             <p>
-              This phase ...
+              This phase involves evaluation on a publicly available test set with approximately <strong>190 test cases</strong> (24GB GPU version). Participants can:
             </p>
+            <ul>
+              <li>Download the official dataset and baseline model</li>
+              <li>Develop and test their approaches using the public test set</li>
+              <li>Submit results with reproducible code</li>
+              <li>Iterate and improve their models based on public leaderboard feedback</li>
+            </ul>
 
-            <h4 class="title is-4">Phase 2: xxx</h4>
+            <h4 class="title is-4">Phase II: Final Evaluation</h4>
             <p>
-              This phase ...
+              This phase involves final evaluation on a <strong>private test set</strong> with the same number of test cases (~190) as Phase I. Key requirements:
             </p>
+            <ul>
+              <li>Submit final model and code for evaluation on the private test set</li>
+              <li>Provide technical report describing the approach and innovations</li>
+              <li>Include model weights and complete reproducible implementation</li>
+              <li>Final rankings and awards will be determined based on Phase II results</li>
+            </ul>
           </div>
 
           <hr>
 
-          <h2 class="title is-3">🚗 Dataset Examples</h2>
+          <h2 class="title is-3">🗄️ Dataset</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
-              In this track ...
+              The track uses the <strong>RoboSense Track 4 Cross-Modal Drone Navigation Dataset</strong>, based on the GeoText-1652 benchmark. The dataset features:
             </p>
+            <ul>
+              <li><strong>Multi-platform imagery</strong>: drone, satellite, and ground cameras</li>
+              <li><strong>Large scale</strong>: 100K+ images across 72 universities</li>
+              <li><strong>Rich annotations</strong>: global descriptions, bounding boxes, and spatial relations</li>
+              <li><strong>No overlap</strong>: Training (33 universities) and test (39 universities) are completely separate</li>
+            </ul>
+            
+            <div class="table-container">
+              <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+                <thead>
+                  <tr>
+                    <th>Platform</th>
+                    <th>Split</th>
+                    <th>Images</th>
+                    <th>Descriptions</th>
+                    <th>Bbox-Texts</th>
+                    <th>Classes</th>
+                    <th>Universities</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Drone</strong></td>
+                    <td>Train</td>
+                    <td>37,854</td>
+                    <td>113,562</td>
+                    <td>113,367</td>
+                    <td>701</td>
+                    <td>33</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Drone</strong></td>
+                    <td>Test</td>
+                    <td>51,355</td>
+                    <td>154,065</td>
+                    <td>140,179</td>
+                    <td>951</td>
+                    <td>39</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Satellite</strong></td>
+                    <td>Train</td>
+                    <td>701</td>
+                    <td>2,103</td>
+                    <td>1,709</td>
+                    <td>701</td>
+                    <td>33</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Satellite</strong></td>
+                    <td>Test</td>
+                    <td>951</td>
+                    <td>2,853</td>
+                    <td>2,006</td>
+                    <td>951</td>
+                    <td>39</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Ground</strong></td>
+                    <td>Train</td>
+                    <td>11,663</td>
+                    <td>34,989</td>
+                    <td>14,761</td>
+                    <td>701</td>
+                    <td>33</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Ground</strong></td>
+                    <td>Test</td>
+                    <td>2,921</td>
+                    <td>8,763</td>
+                    <td>4,023</td>
+                    <td>793</td>
+                    <td>39</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
 
           <hr>
@@ -190,7 +290,16 @@
           <h2 class="title is-3">🛠️ Baseline Model</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
-              In this track, we use ...
+              The baseline model is built upon the <strong>GeoText-1652</strong> framework, which combines:
+            </p>
+            <ul>
+              <li><strong>Vision-Language Architecture</strong>: Based on X-VLM for multi-modal understanding</li>
+              <li><strong>Spatial Relation Matching</strong>: Advanced spatial reasoning for cross-view alignment</li>
+              <li><strong>Multi-Platform Support</strong>: Handles drone, satellite, and ground imagery</li>
+              <li><strong>Robust Training</strong>: Trained on diverse university campuses with rich annotations</li>
+            </ul>
+            <p>
+              The baseline provides a strong foundation for participants to build upon, incorporating state-of-the-art techniques in cross-modal retrieval and spatial understanding.
             </p>
           </div>
 
@@ -199,30 +308,37 @@
           <h2 class="title is-3">📊 Baseline Results</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
-              In this track, we use ...
+              The baseline model achieves the following performance on the Phase I evaluation set (~190 test cases):
             </p>
             <div class="table-container">
               <table class="table is-bordered is-striped is-hoverable is-fullwidth">
                 <thead>
                   <tr>
-                    <th>Metric</th>
-                    <th>Metric 1</th>
-                    <th>Metric 2</th>
-                    <th>Metric 3</th>
-                    <th>Metric 4</th>
+                    <th>Query Type</th>
+                    <th>R@1</th>
+                    <th>R@5</th>
+                    <th>R@10</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Baseline Model</td>
-                    <td>x.xx</td>
-                    <td>x.xx</td>
-                    <td>x.xx</td>
-                    <td>x.xx</td>
+                    <td><strong>Text Query</strong></td>
+                    <td>29.9</td>
+                    <td>46.3</td>
+                    <td>54.1</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Image Query</strong></td>
+                    <td>50.1</td>
+                    <td>81.2</td>
+                    <td>90.3</td>
                   </tr>
                 </tbody>
               </table>
             </div>
+            <p>
+              <strong>Note</strong>: These results represent the baseline performance on the 24GB GPU version used for Phase I evaluation. Participants are encouraged to develop novel approaches to surpass these benchmarks.
+            </p>
           </div>
 
           <hr>
@@ -238,21 +354,34 @@
                   <tr>
                     <th>Resource</th>
                     <th>Link</th>
-                    <th></th>
+                    <th>Description</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>GitHub</td>
-                    <td><a href="https://github.com/robosense2025/track4" target="_blank">https://github.com/robosense2025/track4</a><td>
+                    <td><strong>GitHub Repository</strong></td>
+                    <td><a href="https://github.com/robosense2025/track4" target="_blank">https://github.com/robosense2025/track4</a></td>
+                    <td>Official baseline code and setup instructions</td>
                   </tr>
                   <tr>
-                    <td>Checkpoint<td>
-                    <td></td>
+                    <td><strong>Dataset</strong></td>
+                    <td><a href="https://huggingface.co/datasets/robosense/datasets/tree/main/track4-cross-modal-drone-navigation" target="_blank">HuggingFace Dataset</a></td>
+                    <td>Complete dataset with training and test splits</td>
                   </tr>
                   <tr>
-                    <td>...<td>
-                    <td></td>
+                    <td><strong>Baseline Model</strong></td>
+                    <td><a href="https://huggingface.co/truemanv5666/GeoText1652_model" target="_blank">Pre-trained Checkpoint</a></td>
+                    <td>GeoText-1652 baseline model weights</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Registration</strong></td>
+                    <td><a href="#" target="_blank">Google Form</a></td>
+                    <td>Team registration for the challenge</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Evaluation Server</strong></td>
+                    <td><a href="#" target="_blank">CodaLab</a></td>
+                    <td>Online evaluation platform</td>
                   </tr>
                 </tbody>
               </table>
@@ -261,47 +390,59 @@
 
           <hr>
 
+          <h2 class="title is-3">📧 Contact</h2>
+          <div class="content has-text-justified" style="padding-top: 0px">
+            <p>
+              For questions, technical support, or clarifications about Track 4, please contact:
+            </p>
+            <ul>
+              <li><strong>Email</strong>: <a href="mailto:robosense2025@gmail.com">robosense2025@gmail.com</a></li>
+              <li><strong>GitHub Issues</strong>: <a href="https://github.com/robosense2025/track4/issues" target="_blank">Submit technical questions</a></li>
+              <li><strong>Challenge Website</strong>: <a href="https://robosense2025.github.io/" target="_blank">https://robosense2025.github.io/</a></li>
+            </ul>
+          </div>
 
+          <hr>
 
-
-
-<!-- <h2 class="title is-3">📖 References</h2>
-<div class="content has-text-justified" style="padding-top: 0px;">
-  <div style="
-    max-width: 100%;
-    overflow-x: auto;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    padding: 1em;
-    font-size: 0.9em;
-    box-sizing: border-box;
-  ">
-    <pre style="
-      margin: 0;
-      font-family: monospace;
-      white-space: pre;
-      overflow-x: auto;
-    ">
-@article{xie2025drivebench,
-  title     = {},
-  author    = {},
-  booktitle = {},
-  year      = {2025},
-  url       = {https://robosense2025.github.io}
+          <h2 class="title is-3">📖 References</h2>
+          <div class="content has-text-justified" style="padding-top: 0px;">
+            <div style="
+              max-width: 100%;
+              overflow-x: auto;
+              background-color: #f9f9f9;
+              border-radius: 5px;
+              padding: 1em;
+              font-size: 0.9em;
+              box-sizing: border-box;
+            ">
+              <pre style="
+                margin: 0;
+                font-family: monospace;
+                white-space: pre;
+                overflow-x: auto;
+              ">
+@inproceedings{chu2024towards, 
+  title={Towards Natural Language-Guided Drones: GeoText-1652 Benchmark with Spatial Relation Matching}, 
+  author={Chu, Meng and Zheng, Zhedong and Ji, Wei and Wang, Tingyu and Chua, Tat-Seng}, 
+  booktitle={ECCV}, 
+  year={2024} 
 }
-    </pre>
-  </div>
-</div> -->
 
-
-
+@article{robosense2025track4,
+  title     = {RoboSense Challenge 2025: Track 4 - Cross-Modal Drone Navigation},
+  author    = {RoboSense Challenge Organizers},
+  booktitle = {IROS 2025},
+  year      = {2025},
+  url       = {https://robosense2025.github.io/track4}
+}
+              </pre>
+            </div>
+          </div>
 
         </div>
       </div>
     </div>
   </section>
-
-
 
   <footer class="footer">
     <div class="container">
@@ -320,8 +461,7 @@
         </div>
       </div>
     </div>
-  </footer>
-
+  </section>
 
 </body>
 
