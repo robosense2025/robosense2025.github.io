@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="Track 2: Social Navigation of the RoboSense Challenge 2025. Develop socially-aware RGBD navigation systems in dynamic human environments.">
+  <meta name="description" content="">
   <meta name="keywords" content="3D Scene Understanding, 3D Visual Grounding">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>RoboSense: Track 2</title>
@@ -130,9 +130,6 @@
             <h2 class="title is-2 publication-title">
               Track <a style="color: #76b900;">#2</a>: Social Navigation
             </h2>
-            <h3 class="title is-4 publication-title" style="color: #666;">
-              Socially-Aware RGBD Navigation in Dynamic Human Environments
-            </h3>
           </div>
           </div>
         </div>
@@ -231,70 +228,87 @@
           <h2 class="title is-3">🗄️ Dataset</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
-              The track uses the <strong>RoboSense Track 2 Social Navigation Dataset</strong>, based on the Social-HM3D and Social-MP3D benchmark. 
-              Our benchmark datasets are designed to reflect realistic, diverse, and socially complex navigation environments:
+              The track uses the <strong>RoboSense Track 2 Social Navigation Dataset</strong>, based on the Social-HM3D and Social-MP3D benchmark. The datasets features:
             </p>
             <ul>
-              <li><strong>Goal-driven Trajectories</strong>: Humans navigate with intent, avoiding random or repetitive paths.</li>
-              <li><strong>Natural Behaviors</strong>: Movement includes walking, pausing, and realistic avoidance via ORCA.</li>
-              <li><strong>Balanced Density</strong>: Human count is scaled to scene size, avoiding over- or under-crowding.</li>
-              <li><strong>Diverse Environments</strong>: Includes 844 scenes for Social-HM3D and 72 scenes for Social-MP3D.</li>
+              <li><strong>Realistic Human Trajectories</strong>: Each person is assigned navigation goals and moves with intention, unlike random walks seen in prior work.</li>
+              <li><strong>Natural Behaviors</strong>: Humans alternate between walking and stopping, exhibit diverse speeds, and respond to nearby humans using the ORCA algorithm.</li>
+              <li><strong>Balanced Human Density</strong>: Human numbers are adjusted according to the scene’s spatial area, ensuring natural crowd distributions without overcrowding.</li>
+              <li><strong>Enrich Scene Diversity</strong>: Our datasets contain a broad range of scenarios, featuring 844 scenes derived from Social-HM3D and 72 scenes in Social-MP3D.</li>
             </ul>
             
-            
-          <div class="table-container" style="margin-top: 20px;">
-            <table class="table is-bordered is-striped is-hoverable is-fullwidth">
-              <thead>
-                <tr>
-                  <th>Dataset</th>
-                  <th>Num. of Scenes</th>
-                  <th>Scene Types</th>
-                  <th>Human Num.</th>
-                  <th>Natural Motion</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Social-HM3D</strong></td>
-                  <td>844</td>
-                  <td>Residence, Office, Shop, etc.</td>
-                  <td>0-6</td>
-                  <td>✔️</td>
-                </tr>
-                <tr>
-                  <td><strong>Social-MP3D</strong></td>
-                  <td>72</td>
-                  <td>Residence, Office, Gym, etc.</td>
-                  <td>0-6</td>
-                  <td>✔️</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          
-          <h3 class="title is-4" style="margin-top: 30px;">🎬 Dataset Example</h3>
-          <p style="margin-bottom: 15px;">
-            We showcase one classic encounter type — <strong>Frontal Approach</strong> — where the robot and human approach each other head-on. This requires the robot to proactively avoid the human using socially-aware behaviors.
-          </p>
-
-          <div class="columns">
-            <!-- Social-HM3D Video -->
-            <div class="column is-half">
-              <h4 class="title is-6">Social-HM3D</h4>
-              <iframe width="100%" height="250" src="https://www.youtube.com/embed/v_SdAjZufsg" frameborder="0" allowfullscreen></iframe>
+            <div class="table-container">
+              <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+                <thead>
+                  <tr>
+                    <th>Platform</th>
+                    <th>Split</th>
+                    <th>Images</th>
+                    <th>Descriptions</th>
+                    <th>Bbox-Texts</th>
+                    <th>Classes</th>
+                    <th>Universities</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Drone</strong></td>
+                    <td>Train</td>
+                    <td>37,854</td>
+                    <td>113,562</td>
+                    <td>113,367</td>
+                    <td>701</td>
+                    <td>33</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Drone</strong></td>
+                    <td>Test</td>
+                    <td>51,355</td>
+                    <td>154,065</td>
+                    <td>140,179</td>
+                    <td>951</td>
+                    <td>39</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Satellite</strong></td>
+                    <td>Train</td>
+                    <td>701</td>
+                    <td>2,103</td>
+                    <td>1,709</td>
+                    <td>701</td>
+                    <td>33</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Satellite</strong></td>
+                    <td>Test</td>
+                    <td>951</td>
+                    <td>2,853</td>
+                    <td>2,006</td>
+                    <td>951</td>
+                    <td>39</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Ground</strong></td>
+                    <td>Train</td>
+                    <td>11,663</td>
+                    <td>34,989</td>
+                    <td>14,761</td>
+                    <td>701</td>
+                    <td>33</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Ground</strong></td>
+                    <td>Test</td>
+                    <td>2,921</td>
+                    <td>8,763</td>
+                    <td>4,023</td>
+                    <td>793</td>
+                    <td>39</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-
-            <!-- Social-MP3D Video -->
-            <div class="column is-half">
-              <h4 class="title is-6">Social-MP3D</h4>
-              <iframe width="100%" height="250" src="https://www.youtube.com/embed/6oejN8EM030" frameborder="0" allowfullscreen></iframe>
-            </div>
           </div>
-
-          <p style="margin-top: 20px;">
-            For more classic encounter types (e.g., Intersection, Blind Corner, Person Following), visit our <a href="https://zeying-gong.github.io/projects/falcon/#more-videos" target="_blank">project website</a> to explore more demo videos.
-          </p>
-
 
           <hr>
 
