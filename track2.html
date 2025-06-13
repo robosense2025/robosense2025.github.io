@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="">
+  <meta name="description" content="Track 2: Social Navigation of the RoboSense Challenge 2025. Develop socially-aware RGBD navigation systems in dynamic human environments.">
   <meta name="keywords" content="3D Scene Understanding, 3D Visual Grounding">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>RoboSense: Track 2</title>
@@ -130,6 +130,9 @@
             <h2 class="title is-2 publication-title">
               Track <a style="color: #76b900;">#2</a>: Social Navigation
             </h2>
+            <h3 class="title is-4 publication-title" style="color: #666;">
+              Socially-Aware RGBD Navigation in Dynamic Human Environments
+            </h3>
           </div>
           </div>
         </div>
@@ -148,7 +151,14 @@
               👋 Welcome to <strong>Track <a style="color: #76b900;">#2</a>: Social Navigation</strong> of the <a href="https://robosense2025.github.io/" target="_blank"><strong>2025 RoboSense Challenge</strong></a>!
             </p>
             <p>
-              ...
+              This track challenges participants to develop advanced <strong>RGBD-based perception and navigation systems</strong> that empower autonomous agents to interact <strong>safely, efficiently, and socially</strong> in dynamic human environments.
+              Participants will design algorithms that interpret human behaviors and contextual cues to generate navigation strategies that strike a balance between <strong>navigation efficiency</strong> and <strong>social compliance</strong>. Submissions must address key challenges such as <strong>real-time adaptability, occlusion handling, and ethical decision-making</strong> in socially complex settings.
+            </p>
+            <p>
+              🏆 <strong>Prize Pool</strong>: $2,000 USD (1st: $1,000, 2nd: $600, 3rd: $400) + Innovation Awards
+            </p>
+            <p style="text-align: center;">
+              <img src="./images/track2/task_illustration.png" alt="Track 2 Image" class="img-hover-effect" style="max-width: 80%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
             </p>
           </div>
 
@@ -157,72 +167,188 @@
           <h2 class="title is-3">🎯 Objective</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
-              This track evaluates the capability of  ...
+              This track evaluates an agent's ability to perform <strong>socially compliant navigation</strong> in dynamic indoor environments populated with realistic human agents. Participants must design navigation policies based solely on <strong>RGBD observations and odometry</strong>, without access to global maps or privileged information.
             </p>
-          </div>
+            <ul>
+              <li><strong>Social Norm Compliance</strong>: Agents must maintain safe distances, avoid collisions, and demonstrate socially acceptable behaviors.</li>
+              <li><strong>Realistic Benchmarking</strong>: Navigate in large-scale, photo-realistic indoor scenes with dynamic, collision-aware humans from the <strong>Social-HM3D and Social-MP3D</strong> datasets</li>
+              <li><strong>Egocentric Perception</strong>: Agents operate from a first-person perspective, relying solely on their onboard sensors. This includes color sensing, depth information, and relative goal coordinates, simulating how a robot would perceive its surroundings.</li>
+            </ul>
+            <p>
+              Ultimately, the aim is to develop socially-aware agents that can navigate safely, efficiently, and naturally in environments shared with humans.
+            </p>
+          </div>          
 
           <hr>
 
           <h2 class="title is-3">🗂️ Phases & Requirements</h2>
-          <div class="content has-text-justified" style="padding-top: 0px">
-            <h4 class="title is-4">Phase 1: xxx</h4>
-            <p>
-              This phase ...
-            </p>
 
-            <h4 class="title is-4">Phase 2: xxx</h4>
+          <div class="content has-text-justified" style="padding-top: 0px">
+          
+            <h4 class="title is-4">Minival Phase: Sanity Check</h4>
             <p>
-              This phase ...
+              This phase serves as a <strong>sanity check</strong> to ensure that remote evaluation results match those obtained locally. Participants can:
             </p>
+            <ul>
+              <li>Verify that your code produces consistent results both locally and on the competition server</li>
+              <li>Test environment setup, input/output formats, and compatibility with the remote evaluator</li>
+              <li>Use this phase to debug and validate your inference pipeline</li>
+            </ul>
+            <p>
+              Each team is allowed a maximum of <strong>3 submissions per day</strong> in this phase. Please use them judiciously.
+            </p>
+            <h4 class="title is-4">Phase I: Public Evaluation</h4>
+            <p>
+              This phase involves evaluation on a <strong>public</strong> test set of approximately <strong>1,000 episode</strong> derived from the Social-HM3D validation set. Participants can:
+            </p>
+            <ul>
+              <li>Download the official dataset and baseline model as a starting point</li>
+              <li>Develop and test their methods using the <strong>Social-HM3D training set</strong></li>
+              <li>Submit reproducible code through the official competition Docker image</li>
+              <li>Receive metric scores from remote evaluation and appear on the public leaderboard</li>
+            </ul>
+            <p>
+              Each team is allowed <strong>1 submission per day</strong>, with a total limit of <strong>10 submissions</strong> in this phase.
+            </p>
+            <h4 class="title is-4">Phase II: Final Evaluation</h4>
+            <p>
+              This final phase evaluates submissions on a <strong>private</strong> test set containing approximately <strong>1,000 episode</strong>, equal in size to Phase I. Participants can:
+            </p>
+            <ul>
+              <li>Submit your final model and code for evaluation on the private test set</li>
+              <li>Include model weights and a complete, reproducible implementation</li>
+              <li>Provide a technical report detailing your methodology and innovations</li>
+              <li>Final rankings and awards will be determined based on Phase II results</li>
+            </ul>
+            <p>
+              Each team is allowed <strong>1 submission per day</strong>, with a total limit of <strong>10 submissions</strong> in this phase.
+            </p>          
           </div>
+          
 
           <hr>
 
-          <h2 class="title is-3">🚗 Dataset Examples</h2>
+          <h2 class="title is-3">🗄️ Dataset</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
-              In this track ...
+              The track uses the <strong>RoboSense Track 2 Social Navigation Dataset</strong>, based on the Social-HM3D and Social-MP3D benchmark. 
+              Our benchmark datasets are designed to reflect realistic, diverse, and socially complex navigation environments:
             </p>
+            <ul>
+              <li><strong>Goal-driven Trajectories</strong>: Humans navigate with intent, avoiding random or repetitive paths.</li>
+              <li><strong>Natural Behaviors</strong>: Movement includes walking, pausing, and realistic avoidance via ORCA.</li>
+              <li><strong>Balanced Density</strong>: Human count is scaled to scene size, avoiding over- or under-crowding.</li>
+              <li><strong>Diverse Environments</strong>: Includes 844 scenes for Social-HM3D and 72 scenes for Social-MP3D.</li>
+            </ul>
+            
+            
+          <div class="table-container" style="margin-top: 20px;">
+            <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+              <thead>
+                <tr>
+                  <th>Dataset</th>
+                  <th>Num. of Scenes</th>
+                  <th>Scene Types</th>
+                  <th>Human Num.</th>
+                  <th>Natural Motion</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Social-HM3D</strong></td>
+                  <td>844</td>
+                  <td>Residence, Office, Shop, etc.</td>
+                  <td>0-6</td>
+                  <td>✔️</td>
+                </tr>
+                <tr>
+                  <td><strong>Social-MP3D</strong></td>
+                  <td>72</td>
+                  <td>Residence, Office, Gym, etc.</td>
+                  <td>0-6</td>
+                  <td>✔️</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
+          
+          <h3 class="title is-4" style="margin-top: 30px;">🎬 Dataset Example</h3>
+          <p style="margin-bottom: 15px;">
+            We showcase one classic encounter type — <strong>Frontal Approach</strong> — where the robot and human approach each other head-on. This requires the robot to proactively avoid the human using socially-aware behaviors.
+          </p>
+
+          <div class="columns">
+            <!-- Social-HM3D Video -->
+            <div class="column is-half">
+              <h4 class="title is-6">Social-HM3D</h4>
+              <iframe width="100%" height="250" src="https://www.youtube.com/embed/v_SdAjZufsg" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <!-- Social-MP3D Video -->
+            <div class="column is-half">
+              <h4 class="title is-6">Social-MP3D</h4>
+              <iframe width="100%" height="250" src="https://www.youtube.com/embed/6oejN8EM030" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <p style="margin-top: 20px;">
+            For more classic encounter types (e.g., Intersection, Blind Corner, Person Following), visit our <a href="https://zeying-gong.github.io/projects/falcon/#more-videos" target="_blank">project website</a> to explore more demo videos.
+          </p>
+
 
           <hr>
 
           <h2 class="title is-3">🛠️ Baseline Model</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
-              In this track, we use ...
+              The baseline model is built upon the <strong>Falcon</strong> framework, which integrates the following core components:
+            </p>
+            <ul>
+              <li><strong>Egocentric Policy</strong>: Uses only camera and point-goal inputs, with no access to maps or human positions.</li>
+              <li><strong>Auxiliary Supervision</strong>: Trains with privileged cues and removed during evaluation.</li>
+              <li><strong>Future Awareness</strong>: Learns from human future trajectories to avoid long-term collisions.</li>
+              <li><strong>Robust Environment</strong>: Trained in realistic scenes with dynamic crowds for strong generalization.</li>
+            </ul>            
+            <p>
+              Falcon serves as a strong and socially intelligent baseline for this challenge, effectively combining <strong>auxiliary learning</strong> and <strong>future-aware prediction</strong> to navigate in complex human environments.
             </p>
           </div>
+          
 
           <hr>
 
           <h2 class="title is-3">📊 Baseline Results</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
-              In this track, we use ...
+              The Falcon baseline achieves the following performance on the Phase I evaluation set using the <strong>Social-HM3D</strong> datasets (∼1,000 test episodes):
             </p>
+          
             <div class="table-container">
               <table class="table is-bordered is-striped is-hoverable is-fullwidth">
                 <thead>
                   <tr>
-                    <th>Metric</th>
-                    <th>Metric 1</th>
-                    <th>Metric 2</th>
-                    <th>Metric 3</th>
-                    <th>Metric 4</th>
+                    <th>Dataset</th>
+                    <th>Success ↑</th>
+                    <th>SPL ↑</th>
+                    <th>PSC ↑</th>
+                    <th>H-Coll ↓</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Baseline Model</td>
-                    <td>x.xx</td>
-                    <td>x.xx</td>
-                    <td>x.xx</td>
-                    <td>x.xx</td>
+                    <td>Social-HM3D</td>
+                    <td>55.15</td>
+                    <td>55.15</td>
+                    <td>89.56</td>
+                    <td>42.96</td>
                   </tr>
                 </tbody>
               </table>
             </div>
+          
+            <p>
+              <strong>Note</strong>: These results represent the baseline performance on the 24GB GPU version used for Phase I evaluation. Participants are encouraged to develop novel approaches to surpass the results.
+            </p>
           </div>
 
           <hr>
@@ -238,21 +364,34 @@
                   <tr>
                     <th>Resource</th>
                     <th>Link</th>
-                    <th></th>
+                    <th>Description</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>GitHub</td>
-                    <td><a href="https://github.com/robosense2025/track2" target="_blank">https://github.com/robosense2025/track2</a><td>
+                    <td><strong>GitHub Repository</strong></td>
+                    <td><a href="https://github.com/robosense2025/track2" target="_blank">https://github.com/robosense2025/track2</a></td>
+                    <td>Official baseline code and setup instructions</td>
                   </tr>
                   <tr>
-                    <td>Checkpoint<td>
-                    <td></td>
+                    <td><strong>Dataset</strong></td>
+                    <td><a href="https://huggingface.co/datasets/robosense/datasets/tree/main/track2-social-navigation" target="_blank">HuggingFace Dataset</a></td>
+                    <td>Complete dataset with training and test splits</td>
                   </tr>
                   <tr>
-                    <td>...<td>
-                    <td></td>
+                    <td><strong>Baseline Model</strong></td>
+                    <td><a href="https://drive.google.com/drive/folders/1Bx1L9U345P_9pUfADk3Tnj7uK01EpxZY" target="_blank">Pre-trained Model</a></td>
+                    <td>Baseline model Falcon</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Registration</strong></td>
+                    <td><a href="https://docs.google.com/forms/d/e/1FAIpQLSfVU7DHcb2WXXtD5E-mlXfTKzvwgbF6ZSQAvOupseQLDeZLfw/viewform" target="_blank">Google Form</a></td>
+                    <td>Team registration for the challenge</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Evaluation Server</strong></td>
+                    <td><a href="https://eval.ai/web/challenges/challenge-page/2557/overview" target="_blank">EvalAI Platform</a></td>
+                    <td>Online evaluation platform</td>
                   </tr>
                 </tbody>
               </table>
@@ -261,37 +400,54 @@
 
           <hr>
 
+          <h2 class="title is-3">📧 Contact</h2>
+          <div class="content has-text-justified" style="padding-top: 0px">
+            <p>
+              For questions, technical support, or clarifications about Track 2, please contact:
+            </p>
+            <ul>
+              <li><strong>Email</strong>: <a href="mailto:robosense2025@gmail.com">robosense2025@gmail.com</a></li>
+              <li><strong>GitHub Issues</strong>: <a href="https://github.com/robosense2025/track2/issues" target="_blank">Submit technical questions</a></li>
+              <li><strong>Challenge Website</strong>: <a href="https://robosense2025.github.io/" target="_blank">https://robosense2025.github.io/</a></li>
+            </ul>
+          </div>
 
 
 
-
-<!-- <h2 class="title is-3">📖 References</h2>
-<div class="content has-text-justified" style="padding-top: 0px;">
-  <div style="
-    max-width: 100%;
-    overflow-x: auto;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    padding: 1em;
-    font-size: 0.9em;
-    box-sizing: border-box;
-  ">
-    <pre style="
-      margin: 0;
-      font-family: monospace;
-      white-space: pre;
-      overflow-x: auto;
-    ">
-@article{xie2025drivebench,
-  title     = {},
-  author    = {},
-  booktitle = {},
-  year      = {2025},
-  url       = {https://robosense2025.github.io}
+          <h2 class="title is-3">📖 References</h2>
+          <div class="content has-text-justified" style="padding-top: 0px;">
+            <div style="
+              max-width: 100%;
+              overflow-x: auto;
+              background-color: #f9f9f9;
+              border-radius: 5px;
+              padding: 1em;
+              font-size: 0.9em;
+              box-sizing: border-box;
+            ">
+              <pre style="
+                margin: 0;
+                font-family: monospace;
+                white-space: pre;
+                overflow-x: auto;
+              ">
+@article{gong2024cognition,
+  title={From Cognition to Precognition: A Future-Aware Framework for Social Navigation},
+  author={Gong, Zeying and Hu, Tianshuai and Qiu, Ronghe and Liang, Junwei},
+  journal={arXiv preprint arXiv:2409.13244},
+  year={2024}
 }
-    </pre>
-  </div>
-</div> -->
+
+@article{robosense2025track2,
+  title     = {RoboSense Challenge 2025: Track 2 - Social Navigation},
+  author    = {RoboSense Challenge Organizers},
+  booktitle = {IROS 2025},
+  year      = {2025},
+  url       = {https://robosense2025.github.io/track2}
+}
+              </pre>
+            </div>
+          </div>
 
 
 
