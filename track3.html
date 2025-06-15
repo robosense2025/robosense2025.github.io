@@ -148,7 +148,15 @@
               👋 Welcome to <strong>Track <a style="color: #76b900;">#3</a>: Sensor Placement</strong> of the <a href="https://robosense2025.github.io/" target="_blank"><strong>2025 RoboSense Challenge</strong></a>!
             </p>
             <p>
-              ...
+              Autonomous driving models typically rely on well-calibrated sensor setups, and even slight deviations in
+              sensor placements across different vehicles or platforms can significantly degrade performance.
+              This lack of robustness to sensor variability makes it challenging to transfer perception models between
+              different vehicle platforms without extensive retraining or manual adjustment.
+              Thus, achieving generalization across sensor placements is essential for the practical deployment of
+              driving perception models.
+            </p>
+            <p>
+              🏆 <strong>Prize Pool</strong>: $2,000 USD (1st: $1,000, 2nd: $600, 3rd: $400) + Innovation Awards
             </p>
           </div>
 
@@ -157,7 +165,9 @@
           <h2 class="title is-3">🎯 Objective</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
-              This track evaluates the capability of  ...
+              This track evaluates the capability of generalizing perception models across sensor placements. Participants
+              are expected to develop models that, when trained on fixed sensor placements, can generalize to diverse
+              configurations with minimal performance degradation.
             </p>
           </div>
 
@@ -165,23 +175,39 @@
 
           <h2 class="title is-3">🗂️ Phases & Requirements</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
-            <h4 class="title is-4">Phase 1: xxx</h4>
+            <h4 class="title is-4">Phase 1: Development and Validation</h4>
             <p>
-              This phase ...
+              <strong>Duration:</strong> 15 June 2025 – 15 August 2025
+            </p>
+            <p>
+              In this phase, participants are provided with the <strong>training</strong> and <strong>validation</strong>
+              datasets which include diverse LiDAR placements. Ground truth annotations are made available to support
+              method development and performance validation.
+              Participants are expected to use these datasets to design, train, and refine their models.
             </p>
 
-            <h4 class="title is-4">Phase 2: xxx</h4>
+            <h4 class="title is-4">Phase 2: Testing and Submission</h4>
             <p>
-              This phase ...
+              <strong>Duration:</strong> 15 August 2025 – 15 October 2025
+            </p>
+            <p>
+              In the second phase, participants will have access to a <strong>test</strong> dataset with LiDAR placements
+              different from those in the training and validation sets. Ground truth annotations are not provided.
+              They are required to run their developed models on the test set and submit the results in the json format.
+              Model performance will be evaluated based on the submitted outputs.
             </p>
           </div>
 
           <hr>
 
-          <h2 class="title is-3">🚗 Dataset Examples</h2>
+          <h2 class="title is-3">🚗 Dataset</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
-              In this track ...
+              This track uses datasets collected in the CARLA simulator and formatted according to the <strong>nuScenes</strong> data structure.
+              Please download the provided <a href="YOUR_DEVKIT_LINK_HERE">development kit</a> to process the datasets.
+              This kit is based on the <code>nuscenes-devkit</code> but has been customized for this track.
+              It can be used in the same way as the official nuScenes dataset.
+              <strong>Do not</strong> install the official <code>nuscenes-devkit</code>, as it may not be fully compatible with the datasets used in this track.
             </p>
           </div>
 
@@ -190,7 +216,9 @@
           <h2 class="title is-3">🛠️ Baseline Model</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
-              In this track, we use ...
+              In this track, BEVFusion-L is used as the baseline method. Participants may choose to build upon it or
+              develop their own approaches independently. Detailed environment setup and experimental protocols can be found in the
+              <a href="https://github.com/robosense2025/track3" target="_blank" rel="noopener noreferrer"><strong>Track3 GitHub repository</strong></a>.
             </p>
           </div>
 
