@@ -357,10 +357,51 @@
 
           <hr>
 
+          <h2 class="title is-3">📏 Evaluation Metrics</h2>
+          <div class="content has-text-justified" style="padding-top: 0px">
+            <p>Our benchmark focuses on two key aspects: <strong>task completion</strong> and <strong>social compliance</strong>.</p>
+          
+            <div class="table-container">
+              <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+                <thead>
+                  <tr>
+                    <th>Metric</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>SR</strong> (Success Rate)</td>
+                    <td>Fraction of episodes where the robot successfully reaches the goal.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>SPL</strong> (Success weighted by Path Length)</td>
+                    <td>Penalizes inefficient navigation. Rewards shorter, successful paths.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>PSC</strong> (Personal Space Compliance)</td>
+                    <td>Measures how well the robot avoids violating human personal space. A higher PSC indicates better social behavior. The threshold is set to <strong>1.0m</strong>, considering a <strong>0.3m</strong> human radius and <strong>0.25m</strong> robot radius.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>H-Coll</strong> (Human Collision Rate)</td>
+                    <td>The proportion of episodes involving any human collision. Collisions imply task failure.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Total Score</strong></td>
+                    <td>Weighted combination of the core metrics: <strong>Total = 0.4 × SR + 0.3 × SPL + 0.3 × PSC</strong>. This score reflects overall navigation quality while implicitly penalizing human collisions.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+                      
+
+          <hr>
+
           <h2 class="title is-3">📊 Baseline Results</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
-              The Falcon baseline achieves the following performance on the Phase I evaluation set using the <strong>Social-HM3D</strong> datasets (∼1,000 test episodes):
+              The Falcon baseline achieves the following performance on the Phase I evaluation set using the <strong>Social-HM3D</strong> dataset (∼1,000 test episodes):
             </p>
           
             <div class="table-container">
@@ -368,29 +409,31 @@
                 <thead>
                   <tr>
                     <th>Dataset</th>
-                    <th>Success ↑</th>
+                    <th>SR ↑</th>
                     <th>SPL ↑</th>
                     <th>PSC ↑</th>
                     <th>H-Coll ↓</th>
+                    <th>Total ↑</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>Social-HM3D</td>
-                    <td>55.15</td>
-                    <td>55.15</td>
-                    <td>89.56</td>
-                    <td>42.96</td>
+                    <td>55.84</td>
+                    <td>51.30</td>
+                    <td>89.47</td>
+                    <td>41.58</td>
+                    <td>64.57</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           
             <p>
-              <strong>Note</strong>: These results represent the baseline performance on the 24GB GPU version used for Phase I evaluation. Participants are encouraged to develop novel approaches to surpass the results.
+              <strong>Note</strong>: These results are obtained under the <strong>official competition environment</strong> and may slightly differ from those reported in the paper. All values are presented as percentages (i.e., multiplied by 100).
             </p>
           </div>
-
+          
           <hr>
 
           <h2 class="title is-3">🔗 Resources</h2>
