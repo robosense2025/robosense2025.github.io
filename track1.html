@@ -237,6 +237,51 @@
 
           <hr>
 
+          <h2 class="title is-3">📊 Metrics</h2>
+          <div class="content has-text-justified" style="padding-top: 0px">
+            <p>
+              The evaluation uses two primary metrics to assess model performance:
+            </p>
+            
+            <h4 class="title is-4">Primary Metrics</h4>
+            <div class="table-container">
+              <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+                <thead>
+                  <tr>
+                    <th>Metric</th>
+                    <th>Usage</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Accuracy</strong></td>
+                    <td>Multi-Choice Questions (MCQs)</td>
+                    <td>Exact match between predicted and ground truth answers</td>
+                  </tr>
+                  <tr>
+                    <td><strong>LLM Score</strong></td>
+                    <td>Visual Question Answering (VQA)</td>
+                    <td>Score from 0-10 assigned by an LLM evaluator using detailed rubrics</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h4 class="title is-4">Final Score Calculation</h4>
+            <p>
+              The final ranking is determined by a weighted combination of both phases:
+            </p>
+            <div style="background-color: #f5f5f5; padding: 15px; border-radius: 8px; text-align: center; font-size: 1.2em; margin: 20px 0;">
+              <strong>Final Score = 0.2 × Score<sub>Phase 1</sub> + 0.8 × Score<sub>Phase 2</sub></strong>
+            </div>
+            <p>
+              This weighting emphasizes the importance of robust performance under visual corruptions (Phase 2) while maintaining baseline capabilities on clean images (Phase 1).
+            </p>
+          </div>
+
+          <hr>
+
           <h2 class="title is-3">🛠️ Baseline Model</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
@@ -256,26 +301,49 @@
           <h2 class="title is-3">📊 Baseline Results</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
-              In this track, we use ...
+              We use Qwen2.5-VL-7B-Instruct as the baseline model. The baseline performance on Phase 1 is as follows:
             </p>
             <div class="table-container">
               <table class="table is-bordered is-striped is-hoverable is-fullwidth">
                 <thead>
                   <tr>
-                    <th>Metric</th>
-                    <th>Metric 1</th>
-                    <th>Metric 2</th>
-                    <th>Metric 3</th>
-                    <th>Metric 4</th>
+                    <th>Task</th>
+                    <th>Question Type</th>
+                    <th>Accuracy (%)</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Baseline Model</td>
-                    <td>x.xx</td>
-                    <td>x.xx</td>
-                    <td>x.xx</td>
-                    <td>x.xx</td>
+                    <td rowspan="3"><strong>Perception</strong></td>
+                    <td>MCQ</td>
+                    <td>75.5</td>
+                  </tr>
+                  <tr>
+                    <td>VQAobj</td>
+                    <td>29.2</td>
+                  </tr>
+                  <tr>
+                    <td>VQAscene</td>
+                    <td>22.2</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Prediction</strong></td>
+                    <td>MCQ</td>
+                    <td>59.2</td>
+                  </tr>
+                  <tr>
+                    <td rowspan="2"><strong>Planning</strong></td>
+                    <td>VQAobj</td>
+                    <td>29.6</td>
+                  </tr>
+                  <tr>
+                    <td>VQAscene</td>
+                    <td>31.2</td>
+                  </tr>
+                  <tr style="background-color: #f0f8ff;">
+                    <td><strong>Average</strong></td>
+                    <td>All Types</td>
+                    <td><strong>42.5</strong></td>
                   </tr>
                 </tbody>
               </table>
@@ -295,17 +363,24 @@
                   <tr>
                     <th>Resource</th>
                     <th>Link</th>
-                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td><strong>GitHub</strong></td>
-                    <td><a href="https://github.com/robosense2025/track1" target="_blank">https://github.com/robosense2025/track1</a><td>
+                    <td><strong>GitHub Repository</strong></td>
+                    <td><a href="https://github.com/robosense2025/track1" target="_blank">github.com/robosense2025/track1</a></td>
                   </tr>
                   <tr>
-                    <td><strong>Dataset</strong></td>
-                    <td>TBD</td>
+                    <td><strong>HuggingFace Dataset</strong></td>
+                    <td><a href="https://huggingface.co/datasets/robosense/datasets" target="_blank">huggingface.co/datasets/robosense/datasets</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Baseline Model</strong></td>
+                    <td><a href="https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct" target="_blank">Qwen2.5-VL-7B-Instruct</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Related Paper</strong></td>
+                    <td><a href="https://arxiv.org/abs/2501.04003" target="_blank">arXiv:2501.04003</a></td>
                   </tr>
                   <tr>
                     <td><strong>Registration</strong></td>
@@ -313,10 +388,54 @@
                   </tr>
                   <tr>
                     <td><strong>Evaluation Server</strong></td>
-                    <td>TBD</td>
+                    <td><a href="https://www.codabench.org/competitions/9285/" target="_blank">CodaBench Platform</a></td>
                   </tr>
                 </tbody>
               </table>
+            </div>
+          </div>
+
+          <hr>
+
+          <h2 class="title is-3">❓ Frequently Asked Questions</h2>
+          <div class="content has-text-justified" style="padding-top: 0px">
+            
+            <div style="margin-bottom: 25px;">
+              <h4 class="title is-5" style="color: #76b900; margin-bottom: 10px;">What VLMs can we use?</h4>
+              <p style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; border-left: 4px solid #76b900;">
+                The participants can use any VLMs that are <strong>open-sourced</strong>. Therefore, <code>GPT-4o</code>, <code>Claude 3.5 Sonnet</code>, <code>Gemini 2.0 Pro</code>, etc., are <strong>NOT</strong> allowed.
+              </p>
+            </div>
+
+            <div style="margin-bottom: 25px;">
+              <h4 class="title is-5" style="color: #76b900; margin-bottom: 10px;">What should I submit for reproducibility?</h4>
+              <p style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; border-left: 4px solid #76b900;">
+                If using an existing open-source VLM, please submit your code. If you have performed any fine-tuning, you must also submit the trained weights. Additionally, we <strong>strongly recommend</strong> including:
+                <br><br>• A README file explaining environment setup and usage
+                <br>• An inference script to directly launch for reproduction
+                <br><br>Submissions that <strong>CAN NOT</strong> be reproduced on our end will be considered <strong>INVALID</strong>.
+              </p>
+            </div>
+
+            <div style="margin-bottom: 25px;">
+              <h4 class="title is-5" style="color: #76b900; margin-bottom: 10px;">Why are the evaluation results different using the same prediction file?</h4>
+              <p style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; border-left: 4px solid #76b900;">
+                We use LLM to evaluate open-ended questions. The MCQs result should the the same, while open-ended questions might vary within a small numerical range.
+              </p>
+            </div>
+
+            <div style="margin-bottom: 25px;">
+              <h4 class="title is-5" style="color: #76b900; margin-bottom: 10px;">Can we modify the prompt?</h4>
+              <p style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; border-left: 4px solid #76b900;">
+                Yes, you are free to modify the prompts. This includes techniques such as prompt engineering, retrieval-augmented generation (RAG), and in-context learning. However, to ensure correct evaluation, please <strong>DO NOT</strong> alter the <code>question</code> field in your submission JSON file.
+              </p>
+            </div>
+
+            <div style="margin-bottom: 25px;">
+              <h4 class="title is-5" style="color: #76b900; margin-bottom: 10px;">Can we use external models?</h4>
+              <p style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; border-left: 4px solid #76b900;">
+                No. This competition is intended to evaluate the <strong>capabilities of VLMs</strong> specifically. The use of task-specific models (e.g., object detectors, trajectory predictors) that directly address the task or provide extra information to the VLMs is <strong>NOT</strong> allowed. Modification within the VLM architectures is allowed, such as the vision encoder.
+              </p>
             </div>
           </div>
 
