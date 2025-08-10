@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="description" content="Track 2: Social Navigation of the RoboSense Challenge 2025. Develop socially-aware RGBD navigation systems in dynamic human environments.">
-  <meta name="keywords" content="Social Navigation, Human-Robot Interaction, Habitat 3D Simulator">
+  <meta name="keywords" content="3D Scene Understanding, 3D Visual Grounding">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>RoboSense: Track 2</title>
 
@@ -190,15 +190,18 @@
           <hr>
 
           <h2 class="title is-3">🗂️ Phases & Requirements</h2>
-
-          <div class="content has-text-justified" style="padding-top: 0px">
-          
+          <div class="has-text-justified">
+            <p>All times mentioned are in the <strong>Anywhere on Earth (AoE)</strong> timezone (UTC-12).</p>
             <h4 class="title is-4">Minival Phase: Sanity Check</h4>
             <p>
-              <strong>Duration:</strong> 15 June 2025 – 15 September 2025
+              Public train set validation (~10 episodes)
             </p>
             <p>
-              This phase serves as a <strong>sanity check</strong> to ensure that remote evaluation results match those obtained locally. Participants can:
+              <strong>Duration:</strong> 15 June 2025 – 15 October 2025
+            </p>
+            <p>
+              This phase serves as a <strong>sanity check</strong> to ensure that remote evaluation results match those obtained locally. 
+              Participants can:
             </p>
             <ul>
               <li>Verify that your code produces consistent results both locally and on the competition server</li>
@@ -210,10 +213,15 @@
             </p>
             <h4 class="title is-4">Phase I: Public Evaluation</h4>
             <p>
+              Public test set evaluation (~1000 episodes)
+            </p>
+            <p>
               <strong>Duration:</strong> 15 June 2025 – 15 August 2025
             </p>
             <p>
-              This phase involves evaluation on a <strong>public</strong> test set of approximately <strong>1,000 episode</strong> derived from the Social-HM3D validation set. Participants can:
+              This phase involves evaluation on a <strong>public</strong> test set of approximately <strong>1,000 episode</strong> derived from the Social-HM3D validation set. 
+              The leaderboard for Phase 1 is <strong>public</strong>. All submissions will be visible on the leaderboard as soon as they are successfully evaluated.
+              Participants can:
             </p>
             <ul>
               <li>Download the official dataset and baseline model as a starting point</li>
@@ -227,19 +235,24 @@
 
             <h4 class="title is-4">Phase II: Final Evaluation</h4>
             <p>
-              <strong>Duration:</strong> 15 August 2025 – 15 September 2025
+              Private test set evaluation (~500 episodes)
             </p>
             <p>
-              This final phase evaluates submissions on a <strong>private</strong> test set containing approximately <strong>1,000 episode</strong>, equal in size to Phase I. Participants can:
+              <strong>Duration:</strong> 15 August 2025 – 15 October 2025
+            </p>
+            <p>
+              This final phase evaluates submissions on a <strong>private</strong> test set containing approximately <strong>500 episode</strong>. 
+              The leaderboard for Phase 2 is <strong>private</strong> until after the competition concludes.
+              Participants can:
             </p>
             <ul>
               <li>Submit your final model and code for evaluation on the private test set</li>
-              <li>Include model weights and a complete, reproducible implementation</li>
-              <li>Provide a technical report detailing your methodology and innovations</li>
+              <li>Confirm the submission have been evaluated on the private leaderboard</li>
               <li>Final rankings and awards will be determined based on Phase II results</li>
+              <li>Awarded teams need to provide a technical report detailing your methodology and innovations</li>
             </ul>
             <p>
-              Each team is allowed <strong>1 submission per day</strong>, with a total limit of <strong>10 submissions</strong> in this phase.
+              Each team is allowed <strong>2 submission per day</strong>, with a total limit of <strong>20 submissions</strong> in this phase.
             </p>          
           </div>
           
@@ -249,14 +262,14 @@
           <h2 class="title is-3">🗄️ Dataset</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
-              The track uses the <strong>RoboSense Track 2 Social Navigation Dataset</strong>, based on the Social-HM3D and Social-MP3D benchmark. 
+              The track uses the <strong>RoboSense Track 2 Social Navigation Dataset</strong>, based on the Social-HM3D benchmark. 
               Our benchmark datasets are designed to reflect realistic, diverse, and socially complex navigation environments:
             </p>
             <ul>
               <li><strong>Goal-driven Trajectories</strong>: Humans navigate with intent, avoiding random or repetitive paths.</li>
               <li><strong>Natural Behaviors</strong>: Movement includes walking, pausing, and realistic avoidance via ORCA.</li>
               <li><strong>Balanced Density</strong>: Human count is scaled to scene size, avoiding over- or under-crowding.</li>
-              <li><strong>Diverse Environments</strong>: Includes 844 scenes for Social-HM3D and 72 scenes for Social-MP3D.</li>
+              <li><strong>Diverse Environments</strong>: Includes 844 scenes for Social-HM3D.</li>
             </ul>
             
             
@@ -279,20 +292,13 @@
                   <td>0-6</td>
                   <td>✔️</td>
                 </tr>
-                <tr>
-                  <td><strong>Social-MP3D</strong></td>
-                  <td>72</td>
-                  <td>Residence, Office, Gym, etc.</td>
-                  <td>0-6</td>
-                  <td>✔️</td>
-                </tr>
               </tbody>
             </table>
           </div>
           
           <h3 class="title is-4" style="margin-top: 30px;">🎬 Dataset Example</h3>
           <p style="margin-bottom: 15px;">
-            We showcase one classic encounter type — <strong>Frontal Approach</strong> — where the robot and human approach each other head-on. This requires the robot to proactively avoid the human using socially-aware behaviors.
+            We showcase some classic encounter episodes in the benchmark. These require the robot to proactively avoid the human using socially-aware behaviors.
           </p>
 
           <div class="columns">
@@ -313,28 +319,66 @@
               </div>
             </div>
           
-            <!-- Social-MP3D Column -->
+            <!-- Person Following Column -->
             <div class="column is-half">
-              <h4 class="title is-5" style="margin-top: 6px; margin-bottom: 6px;">Social-MP3D</h4>
+              <!-- <h4 class="title is-5" style="margin-top: 6px; margin-bottom: 6px;">Social-MP3D</h4> -->
           
               <div class="mb-4">
-                <iframe width="100%" height="300" src="https://www.youtube.com/embed/6oejN8EM030" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="100%" height="300" src="https://www.youtube.com/embed/QHQgM6UuJ74" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
           
               <div class="mb-4">
-                <iframe width="100%" height="300" src="https://www.youtube.com/embed/INbveNe2DbU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="100%" height="300" src="https://www.youtube.com/embed/4BdF8qB2Vks" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
           
               <div class="mb-4">
-                <iframe width="100%" height="300" src="https://www.youtube.com/embed/_eU74UeWKrw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="100%" height="300" src="https://www.youtube.com/embed/QrNzo7etELQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
             </div>
           </div>          
 
           <p style="margin-top: 20px;">
-            For more classic encounter types (e.g., Intersection, Blind Corner, Person Following), visit our <a href="https://zeying-gong.github.io/projects/falcon/#more-videos" target="_blank">project website</a> to explore more demo videos.
+            For more classic encounter types (e.g., Intersection, Blind Corner), visit our <a href="https://zeying-gong.github.io/projects/falcon/#more-videos" target="_blank">project website</a> to explore more demo videos.
           </p>
 
+
+          <hr>
+
+          <h2 class="title is-3">📊 Evaluation Metrics</h2>
+          <p>Our benchmark focuses on two key aspects: <strong>task completion</strong> and <strong>social compliance</strong>.</p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>SR</strong> (Success Rate)</td>
+                <td>Fraction of episodes where the robot successfully reaches the goal.</td>
+              </tr>
+              <tr>
+                <td><strong>SPL</strong> (Success weighted by Path Length)</td>
+                <td>Penalizes inefficient navigation. Rewards shorter, successful paths.</td>
+              </tr>
+              <tr>
+                <td><strong>PSC</strong> (Personal Space Compliance)</td>
+                <td>Measures how well the robot avoids violating human personal space. A higher PSC indicates better social behavior. The threshold is set to <strong>1.0m</strong>, considering a <strong>0.3m</strong> human radius and <strong>0.25m</strong> robot radius.</td>
+              </tr>
+              <tr>
+                <td><strong>H-Coll</strong> (Human Collision Rate)</td>
+                <td>The proportion of episodes involving any human collision. Collisions imply task failure.</td>
+              </tr>
+              <tr>
+                <td><strong>Total Score</strong></td>
+                <td>Weighted combination of the core metrics: <strong>Total = 0.4 × SR + 0.3 × SPL + 0.3 × PSC</strong>. This score reflects overall navigation quality while implicitly penalizing human collisions.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>The evaluation metrics and scoring formula remain the same for both Phase 1 and Phase 2. The final rankings and awards will be determined exclusively by the results from <strong>Phase 2</strong>. Rankings are based on the <code>Total Score</code>, with ties broken by the higher <strong>Success Rate (SR)</strong>.</p>
 
           <hr>
 
@@ -357,51 +401,10 @@
 
           <hr>
 
-          <h2 class="title is-3">📏 Evaluation Metrics</h2>
-          <div class="content has-text-justified" style="padding-top: 0px">
-            <p>Our benchmark focuses on two key aspects: <strong>task completion</strong> and <strong>social compliance</strong>.</p>
-          
-            <div class="table-container">
-              <table class="table is-bordered is-striped is-hoverable is-fullwidth">
-                <thead>
-                  <tr>
-                    <th>Metric</th>
-                    <th>Description</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><strong>SR</strong> (Success Rate)</td>
-                    <td>Fraction of episodes where the robot successfully reaches the goal.</td>
-                  </tr>
-                  <tr>
-                    <td><strong>SPL</strong> (Success weighted by Path Length)</td>
-                    <td>Penalizes inefficient navigation. Rewards shorter, successful paths.</td>
-                  </tr>
-                  <tr>
-                    <td><strong>PSC</strong> (Personal Space Compliance)</td>
-                    <td>Measures how well the robot avoids violating human personal space. A higher PSC indicates better social behavior. The threshold is set to <strong>1.0m</strong>, considering a <strong>0.3m</strong> human radius and <strong>0.25m</strong> robot radius.</td>
-                  </tr>
-                  <tr>
-                    <td><strong>H-Coll</strong> (Human Collision Rate)</td>
-                    <td>The proportion of episodes involving any human collision. Collisions imply task failure.</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Total Score</strong></td>
-                    <td>Weighted combination of the core metrics: <strong>Total = 0.4 × SR + 0.3 × SPL + 0.3 × PSC</strong>. This score reflects overall navigation quality while implicitly penalizing human collisions.</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-                      
-
-          <hr>
-
           <h2 class="title is-3">📊 Baseline Results</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
-              The Falcon baseline achieves the following performance on the Phase I evaluation set using the <strong>Social-HM3D</strong> dataset (∼1,000 test episodes):
+              The Falcon baseline achieves the following performance on the Phase I evaluation set using the <strong>Social-HM3D</strong> datasets (∼1,000 test episodes):
             </p>
           
             <div class="table-container">
@@ -409,31 +412,29 @@
                 <thead>
                   <tr>
                     <th>Dataset</th>
-                    <th>SR ↑</th>
+                    <th>Success ↑</th>
                     <th>SPL ↑</th>
                     <th>PSC ↑</th>
                     <th>H-Coll ↓</th>
-                    <th>Total ↑</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>Social-HM3D</td>
-                    <td>55.84</td>
-                    <td>51.30</td>
-                    <td>89.47</td>
-                    <td>41.58</td>
-                    <td>64.57</td>
+                    <td>55.15</td>
+                    <td>55.15</td>
+                    <td>89.56</td>
+                    <td>42.96</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           
             <p>
-              <strong>Note</strong>: These results are obtained under the <strong>official competition environment</strong> and may slightly differ from those reported in the paper. All values are presented as percentages (i.e., multiplied by 100).
+              <strong>Note</strong>: These results represent the baseline performance on the 24GB GPU version used for Phase I evaluation. Participants are encouraged to develop novel approaches to surpass the results.
             </p>
           </div>
-          
+
           <hr>
 
           <h2 class="title is-3">🔗 Resources</h2>
