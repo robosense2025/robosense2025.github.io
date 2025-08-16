@@ -552,25 +552,175 @@
             
           <div style="margin-bottom: 25px;">
             <h4 class="title is-5" style="color: #76b900; margin-bottom: 10px;">
-              Question 1
+              Why are my results not showing on the leaderboard?
             </h4>
-            <p style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; border-left: 4px solid #76b900;">
-              Answer 1 (to be added)
-            </p>
+            <div style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; border-left: 4px solid #76b900;">
+              <p style="margin-bottom: 10px;">
+                The most common reason is that your submission did not generate a valid <code>result.json</code> file in the expected format. Please ensure your submission:
+              </p>
+              <ul style="margin-left: 20px; margin-bottom: 15px;">
+                <li>Produces a valid JSON file at <code>output/result.json</code></li>
+                <li>Contains all required metrics: <code>SR</code>, <code>SPL</code>, <code>PSC</code>, <code>H-Coll</code></li>
+                <li>Uses the correct numerical format (floating-point values)</li>
+              </ul>
+              <p style="margin-bottom: 10px;">Example of correct format:</p>
+              <div style="background-color: #ffffff; padding: 12px; border-radius: 4px; font-family: monospace; border: 1px solid #ddd;">
+                {<br>
+                &nbsp;&nbsp;"SR": 0.50,<br>
+                &nbsp;&nbsp;"SPL": 0.45,<br>
+                &nbsp;&nbsp;"PSC": 0.60,<br>
+                &nbsp;&nbsp;"H-Coll": 0.02<br>
+                }
+              </div>
+            </div>
 
             <h4 class="title is-5" style="color: #76b900; margin-bottom: 10px;">
-              Question 2
+              How do I handle different dependencies or environment requirements?
             </h4>
-            <p style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; border-left: 4px solid #76b900;">
-              Answer 2 (to be added)
-            </p>
+            <div style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; border-left: 4px solid #76b900;">
+              <p style="margin-bottom: 10px;">
+                If your submission requires additional dependencies:
+              </p>
+              <ul style="margin-left: 20px; margin-bottom: 15px;">
+                <li><strong>Minor dependencies</strong>: Add installation commands to your <code>run.sh</code> script using conda/pip</li>
+                <li><strong>Major differences</strong>: Contact us via email (robosense2025@gmail.com), Slack, or WeChat for assistance</li>
+              </ul>
+              <p style="margin-bottom: 10px;">Example <code>run.sh</code> with dependency installation:</p>
+              <div style="background-color: #ffffff; padding: 12px; border-radius: 4px; font-family: monospace; border: 1px solid #ddd;">
+                #!/bin/bash<br>
+                # Install additional dependencies<br>
+                conda install -c conda-forge your_package<br>
+                pip install specific_library==1.2.3<br>
+                <br>
+                # Run your inference<br>
+                source activate falcon<br>
+                python your_inference_script.py
+              </div>
+            </div>
 
             <h4 class="title is-5" style="color: #76b900; margin-bottom: 10px;">
-              Question 3
+              What is the correct dataset path for my code?
             </h4>
-            <p style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; border-left: 4px solid #76b900;">
-              Answer 3 (to be added)
-            </p>
+            <div style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; border-left: 4px solid #76b900;">
+              <p style="margin-bottom: 10px;">
+                To simplify evaluation, we use a fixed dataset mount point inside the evaluation Docker container:
+              </p>
+              <div style="background-color: #ffffff; padding: 12px; border-radius: 4px; font-family: monospace; border: 1px solid #ddd; margin-bottom: 15px;">
+                /app/Falcon/data/datasets/pointnav/social-hm3d/minival
+              </div>
+              <p>
+                <strong>Important</strong>: Your code should always read data from this path, regardless of which phase is being evaluated. Our backend automatically mounts the appropriate dataset for each phase to this location.
+              </p>
+            </div>
+
+            <h4 class="title is-5" style="color: #76b900; margin-bottom: 10px;">
+              What are the differences between Phase I and Phase II?
+            </h4>
+            <div style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; border-left: 4px solid #76b900;">
+              <p style="margin-bottom: 10px;">
+                All submissions are evaluated inside Docker images with the following versions:
+              </p>
+              <ul style="margin-left: 20px; margin-bottom: 15px;">
+                <li><strong>Phase I</strong>: <code>docker pull zeyinggong/robosense_socialnav:v0.5</code></li>
+                <li><strong>Phase II</strong>: <code>docker pull zeyinggong/robosense_socialnav:v0.7</code></li>
+              </ul>
+              <p style="margin-bottom: 10px;"><strong>Key Changes in v0.7</strong>:</p>
+              <ol style="margin-left: 20px; margin-bottom: 15px;">
+                <li><strong>Fixed driver compatibility issues</strong> due to EGL errors</li>
+                <li><strong>Multi-environment support</strong>: Phase II supports up to 8 environments for evaluation</li>
+                <li><strong>Updated action space</strong>: The action set has been refined to clearly distinguish between <strong>stopping</strong> <em>(ending an episode)</em> and <strong>pausing</strong> <em>(remaining stationary)</em>. A new <strong>move_backward</strong> action is also introduced.</li>
+              </ol>
+              <div style="background-color: #ffffff; padding: 12px; border-radius: 4px; font-family: monospace; border: 1px solid #ddd; margin-bottom: 10px;">
+                0 - stop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# now correctly ends the episode<br>
+                1 - move_forward<br>
+                2 - turn_left<br>
+                3 - turn_right<br>
+                4 - move_backward&nbsp;&nbsp;&nbsp;# newly added action for moving backward<br>
+                5 - pause&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# newly added action for pausing without movement
+              </div>
+              <p>This action space is fully backward-compatible with Phase I methods.</p>
+            </div>
+
+            <h4 class="title is-5" style="color: #76b900; margin-bottom: 10px;">
+              How can I test my submission locally?
+            </h4>
+            <div style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; border-left: 4px solid #76b900;">
+              <p style="margin-bottom: 10px;">
+                <strong>For Phase II</strong>, we recommend using Docker image v0.7 for local testing:
+              </p>
+              <div style="background-color: #ffffff; padding: 12px; border-radius: 4px; font-family: monospace; border: 1px solid #ddd; margin-bottom: 15px;">
+                docker run --rm -it \<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;--gpus all \<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;--runtime=nvidia \<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;-v /path/to/your/submission:/app/Falcon/input:ro \<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;-v /path/to/your/data:/app/Falcon/data:ro \<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;zeyinggong/robosense_socialnav:v0.7
+              </div>
+              <p style="margin-bottom: 10px;">
+                You can manually execute your <code>run.sh</code> inside the container to verify correctness.
+              </p>
+              <p style="margin-bottom: 10px;">
+                <strong>Tip</strong>: Refer to the provided <a href="https://drive.google.com/file/d/1k5tMeocASZhCUL2SFUILqWTszNRYjC4L/view?usp=sharing" target="_blank" style="color: #76b900;">Baseline ZIP Submission Example (Updated)</a> for reference.
+              </p>
+              <p>
+                <strong>Note</strong>: Phase II does not support action submissions since the test dataset is not publicly available.
+              </p>
+            </div>
+
+            <h4 class="title is-5" style="color: #76b900; margin-bottom: 10px;">
+              How long does evaluation take?
+            </h4>
+            <div style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; border-left: 4px solid #76b900;">
+              <ul style="margin-left: 20px; margin-bottom: 15px;">
+                <li><strong>Minival Phase</strong>: 5–10 minutes</li>
+                <li><strong>Phase I Full Evaluation</strong>: 3–5 hours (depending on queue length and inference runtime)</li>
+                <li><strong>Phase II Full Evaluation</strong>: 2–4 hours (depending on number of environments used, queue length, and inference runtime)</li>
+              </ul>
+              <p style="margin-bottom: 10px;">
+                If your submission remains pending for over 48 hours, please:
+              </p>
+              <ul style="margin-left: 20px;">
+                <li>Open an issue on our <a href="https://github.com/robosense2025/track2/issues" target="_blank" style="color: #76b900;">GitHub repository</a></li>
+                <li>Contact us at <a href="mailto:robosense2025@gmail.com" style="color: #76b900;">robosense2025@gmail.com</a></li>
+              </ul>
+            </div>
+
+            <h4 class="title is-5" style="color: #76b900; margin-bottom: 10px;">
+              Can I modify the evaluation pipeline or import custom code?
+            </h4>
+            <div style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; border-left: 4px solid #76b900;">
+              <p style="margin-bottom: 10px;">
+                <strong>Yes, we encourage flexible approaches!</strong> You have significant freedom to modify the evaluation pipeline and import your own policy code, including:
+              </p>
+              <ul style="margin-left: 20px; margin-bottom: 15px;">
+                <li><code>Falcon/habitat-baselines/habitat_baselines/eval.py</code> (main evaluation script)</li>
+                <li><code>Falcon/habitat-baselines/habitat_baselines/rl/ppo/falcon_evaluator.py</code> (evaluator implementation)</li>
+              </ul>
+              <p style="margin-bottom: 10px;">
+                You can import and integrate your custom modules, modify the inference pipeline, or adapt the evaluation logic to suit your approach.
+              </p>
+              <p style="margin-bottom: 10px;">
+                <strong>⚠️ However, the following restrictions must be respected:</strong>
+              </p>
+              <ol style="margin-left: 20px; margin-bottom: 10px;">
+                <li><strong>Open-source models only</strong>: You cannot use proprietary pretrained models or private datasets that are not publicly accessible</li>
+                <li><strong>No bypassing simulation</strong>: You cannot circumvent the simulator's navigation logic to directly generate result files</li>
+                <li><strong>No bypassing evaluation constraints</strong>: You cannot circumvent the restrictions enforced in <code>falcon_evaluator.py</code>, including accessing extra environmental information or sensors beyond the allowed observation keys, or any other validation checks</li>
+              </ol>
+              <p>
+                These restrictions ensure fair competition while maintaining the scientific integrity of the challenge.
+              </p>
+            </div>
+          </div>
+
+          <div style="background-color: #e8f5e8; padding: 20px; border-radius: 8px; border-left: 4px solid #76b900; margin-top: 30px;">
+            <h5 style="margin-bottom: 10px; color: #333;"><strong>🆘 Still need help?</strong></h5>
+            <p style="margin-bottom: 10px;">If your question isn't answered here, please reach out to us:</p>
+            <ul style="margin-left: 20px; margin-bottom: 0;">
+              <li><strong>Email</strong>: <a href="mailto:robosense2025@gmail.com" style="color: #76b900;">robosense2025@gmail.com</a></li>
+              <li><strong>GitHub Issues</strong>: <a href="https://github.com/robosense2025/track2/issues" target="_blank" style="color: #76b900;">Track 2 Issues</a></li>
+              <li><strong>Competition Website</strong>: <a href="https://robosense2025.github.io/" target="_blank" style="color: #76b900;">RoboSense 2025</a></li>
+            </ul>
           </div>
 
 
