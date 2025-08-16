@@ -207,7 +207,7 @@
               <li><strong>Target platforms:</strong> Unlabeled Drone and Quadruped LiDAR scans</li>
             </ul>
             <p>
-              <strong>Ranking Metric:</strong> Weighted score combining:
+              <strong>Ranking Metric:</strong> Equal weighted score combining:
             </p>
             <ul>
               <li>AP@0.50 (R40) for the <strong>Car</strong> class</li>
@@ -216,7 +216,18 @@
             <p>
               (Scores computed across both Drone and Quadruped platforms.)
             </p>
-          
+
+            <h4 class="title is-4">Final Ranking</h4>
+            <p>
+              The <a style="color: #76b900;"><b>final ranking</b></a> is determined by a <a style="color: #76b900;"><b>weighted combination</b></a> of both Phase <a style="color: #76b900;"><b>1</b></a> and Phase <a style="color: #76b900;"><b>2</b></a>:
+            </p>
+            <div style="background-color: #f5f5f5; padding: 15px; border-radius: 8px; text-align: center; font-size: 1.2em; margin: 20px 0;">
+              <strong>Final Score = 0.5 x Score<sub>Phase 1</sub> + 0.5 x Score<sub>Phase 2</sub></strong>
+            </div>
+            <p>
+              The difficulty for Phase1 and Phase2 is similar, so we assign equal weights to both phases.
+            </p>
+
           </div>
           
 
@@ -401,8 +412,39 @@
 
           <hr>
 
+          <h2 class="title is-3">❓ Frequently Asked Questions</h2>
+          <div class="content has-text-justified" style="padding-top: 0px">
 
+          <p>
+            Here, we provide a list of Frequently Asked Questions (FAQs) below for better clarity. 
+            If you have additional questions on the details about this competition, please reach out at <a>robosense2025@gmail.com</a>.
+          </p>
 
+          <hr>
+            
+            <div style="margin-bottom: 25px;">
+              <h4 class="title is-5" style="color: #76b900; margin-bottom: 10px;">Can other datasets be used for source training?</h4>
+              <p style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; border-left: 4px solid #76b900;">
+                Sure, you can use any dataset for source training. Note that the <strong>intensity</strong> of different datasets may vary, so you may need to adjust the intensity range accordingly.
+              </p>
+            </div>
+
+            <div style="margin-bottom: 25px;">
+              <h4 class="title is-5" style="color: #76b900; margin-bottom: 10px;">Can large pretrained fundation model for point cloud be used?</h4>
+              <p style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; border-left: 4px solid #76b900;">
+                Yes, but as the track is designed to encourage cross-platform adaptation, we recommend using the provided baseline model as a starting point.
+                For competitors who use large pretrained foundation models, we will check its technical details to measure whether it is a fair use.
+                <!-- And we ensure that we will keep some seats for methods without large pretrained foundation models. -->
+              </p>
+            </div>
+
+            <div style="margin-bottom: 25px;">
+              <h4 class="title is-5" style="color: #76b900; margin-bottom: 10px;">Can base detactors or adaption methods in baselines be changed?</h4>
+              <p style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; border-left: 4px solid #76b900;">
+                Sure, we encourage participants to explore alternative strategies to further boost cross-platform performance.
+                <!-- And we ensure that we will keep some seats for methods without large pretrained foundation models. -->
+              </p>
+            </div>
 
 
 <!-- <h2 class="title is-3">📖 References</h2>
