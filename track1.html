@@ -105,12 +105,13 @@
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">RoboSense 2025</a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="https://robosense2025.github.io/" target="_blank">Main Page</a>
-            <a class="navbar-item" href="https://robosense2025.github.io/track1" target="_blank">Track 1: Driving with Language</a>
-            <a class="navbar-item" href="https://robosense2025.github.io/track2" target="_blank">Track 2: Social Navigation</a>
-            <a class="navbar-item" href="https://robosense2025.github.io/track3" target="_blank">Track 3: Sensor Placement</a>
-            <a class="navbar-item" href="https://robosense2025.github.io/track4" target="_blank">Track 4: Cross-Modal Drone Navigation</a>
-            <a class="navbar-item" href="https://robosense2025.github.io/track5" target="_blank">Track 5: Cross-Platform 3D Object Detection</a>
+            <a class="navbar-item" href="https://robosense2025.github.io/" target="_blank">RoboSense 2025 Main Page</a>
+            <a class="navbar-item" href="https://robosense2025.github.io/track1" target="_blank">- Track #1: Driving with Language</a>
+            <a class="navbar-item" href="https://robosense2025.github.io/track2" target="_blank">- Track #2: Social Navigation</a>
+            <a class="navbar-item" href="https://robosense2025.github.io/track3" target="_blank">- Track #3: Sensor Placement</a>
+            <a class="navbar-item" href="https://robosense2025.github.io/track4" target="_blank">- Track #4: Cross-Modal Drone Navigation</a>
+            <a class="navbar-item" href="https://robosense2025.github.io/track5" target="_blank">- Track #5: Cross-Platform 3D Object Detection</a>
+            <a class="navbar-item" href="https://www.iros25.org/" target="_blank">IROS 2025 Main Page</a>
           </div>
         </div>
       </div>
@@ -138,6 +139,8 @@
   </section>
 
 
+
+
   <section class="section" style="margin-top: 0px;">
     <div class="container is-max-desktop">
 
@@ -145,7 +148,7 @@
         <div class="column is-full-width left">
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
-              <img src="./images/track1/teaser.png" alt="Track 1 Image" class="img-hover-effect" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+              <img src="./images/track1/teaser.png" alt="Track 1 Image" style="max-width: 100%; height: auto;">
             </p>
             <p>
               👋 Welcome to <strong>Track <a style="color: #76b900;">#1</a>: Driving with Language</strong> of the <a href="https://robosense2025.github.io/" target="_blank"><strong>2025 RoboSense Challenge</strong></a>!
@@ -153,10 +156,12 @@
             <p>
               In the era of autonomous driving, it is increasingly critical for intelligent agents to understand and act upon language-based instructions. 
               Human drivers naturally interpret complex commands involving spatial, semantic, and temporal cues (e.g., "turn left after the red truck" or "stop at the next gas station on your right"). 
+            </p>
+            <p>
               To enable such capabilities in autonomous systems, vision-language models (VLMs) must be able to perceive dynamic driving scenes, understand natural language commands, and make informed driving decisions accordingly.
             </p>
             <p>
-              🏆 Prize Pool: $2,000 USD (1st: $1,000, 2nd: $600, 3rd: $400) + Innovation Awards
+              🏆 <b>Prize Pool:</b> <a style="color: #76b900;"><b>$2,000 USD</b></a> (1st: $1,000, 2nd: $600, 3rd: $400) + Innovation Awards
             </p>
           </div>
 
@@ -171,21 +176,70 @@
 
           <hr>
 
+          <h2 class="title is-3">🔗 Resources</h2>
+          <div class="content has-text-justified" style="padding-top: 0px">
+            <p>
+              We provide the following resources to support the development of models in this track:
+            </p>
+            <div class="table-container">
+              <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+                <thead>
+                  <tr>
+                    <th>Resource</th>
+                    <th>Link</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>GitHub Repository</strong></td>
+                    <td><a href="https://github.com/robosense2025/track1" target="_blank">github.com/robosense2025/track1</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>HuggingFace Dataset</strong></td>
+                    <td><a href="https://huggingface.co/datasets/robosense/datasets" target="_blank">huggingface.co/datasets/robosense/datasets</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Baseline Model</strong></td>
+                    <td><a href="https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct" target="_blank">Qwen2.5-VL-7B-Instruct</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Registration Form</strong></td>
+                    <td><a href="https://docs.google.com/forms/d/e/1FAIpQLSdwfvk-NHdQh9-REiBLCjHMcyLT-sPCOCzJU-ux5jbcZLTkBg/viewform?usp=sharing&ouid=111184461807593368933" target="_blank">Google Form</a>&nbsp;(Closed on August 15th)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Evaluation Server</strong></td>
+                    <td><a href="https://www.codabench.org/competitions/9285/" target="_blank">CodaBench Platform</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+
+          <hr>
+
+
           <h2 class="title is-3">🗂️ Phases & Requirements</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
           
-            <h4 class="title is-4">Phase 1: Clean Image Evaluation</h4>
+            <h4 class="title is-4">Phase <a style="color: #76b900;">#1</a>: Clean Image Evaluation</h4>
             <p>
-              <strong>Duration:</strong> 15 June 2025 – 15 August 2025
+              <strong>Duration:</strong> June <a style="color: #76b900;"><b>15th</b></a>, 2025 (anytime on earth) - August <a style="color: #76b900;"><b>15th</b></a>, 2025 (anytime on earth)
             </p>
             <p>
-              In this phase, participants are expected to answer the high-level driving questions given the clean images. Participants can:
-              - Fine-tune the VLM on custom datasets (including nuScenes, DriveBench, etc.)
-              - Develop and test their approaches 
-              - Submit results as a json file
-              - Iterate and improve their models based on public leaderboard feedback
+              In this phase, participants are expected to answer the high-level driving questions given the clean images. 
+            </p>
             <p>
-              <strong>Ranking Metric:</strong> Weighted score combining:
+              Specifically, participants are expected to:
+            </p>
+            <ul>
+              <li>Fine-tune the VLM on custom datasets (including nuScenes, DriveBench, etc.)</li>
+              <li>Develop and test the approaches</li>
+              <li>Submit results as a json file</li>
+              <li>Iterate and improve their models based on public leaderboard feedback</li>
+            </ul>
+            <p>
+              <strong>Ranking Metric:</strong> The weighted score combining:
             </p>
             <ul>
               <li>Accuracy</li>
@@ -195,19 +249,23 @@
           
             <hr>
           
-            <h4 class="title is-4">Phase 2: Corruption Image Evaluation</h4>
+            <h4 class="title is-4">Phase <a style="color: #76b900;">#2</a>: Corruption Image Evaluation</h4>
             <p>
-              <strong>Duration:</strong> 15 August 2025 – 15 October 2025
+              <strong>Duration:</strong> August <a style="color: #76b900;"><b>15th</b></a>, 2025 (anytime on earth) - September <a style="color: #76b900;"><b>15th</b></a>, 2025 (anytime on earth)
             </p>
             <p>
-              In this phase, participants are expected to answer the high-level driving questions given the corrupted images. Participants can:
-              - Fine-tune the VLM on custom datasets (including nuScenes, DriveBench, etc.)
-              - Develop and test their approaches 
-              - Submit results as a json file
-              - Iterate and improve their models based on public leaderboard feedback
+              In this phase, participants are expected to answer the high-level driving questions given the corrupted images.
+            <p>
+              Specifically, participants are expected to:
+            </p>
+            <ul>
+              <li>Fine-tune the VLM on custom datasets (including nuScenes, DriveBench, etc.)</li>
+              <li>Develop and test their approaches</li>
+              <li>Submit results as a json file</li>
+              <li>Iterate and improve their models based on public leaderboard feedback</li>
             </ul>
             <p>
-              <strong>Ranking Metric:</strong> Weighted score combining:
+              <strong>Ranking Metric:</strong> The weighted score combining:
             </p>
             <ul>
               <li>Accuracy</li>
@@ -220,16 +278,16 @@
           <h2 class="title is-3">🚗 Dataset Examples</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
-              <img src="./images/track1/data_example1.png" alt="Track 1 Image" class="img-hover-effect" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+              <img src="./images/track1/data_example1.png" alt="Track 1 Image" style="max-width: 100%; height: auto;">
             </p>
             <p>
-              <img src="./images/track1/data_example2.png" alt="Track 1 Image" class="img-hover-effect" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+              <img src="./images/track1/data_example2.png" alt="Track 1 Image" style="max-width: 100%; height: auto;">
             </p>
             <p>
-              <img src="./images/track1/data_example3.png" alt="Track 1 Image" class="img-hover-effect" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+              <img src="./images/track1/data_example3.png" alt="Track 1 Image" style="max-width: 100%; height: auto;">
             </p>
             <p>
-              <img src="./images/track1/data_example4.png" alt="Track 1 Image" class="img-hover-effect" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+              <img src="./images/track1/data_example4.png" alt="Track 1 Image" style="max-width: 100%; height: auto;">
             </p>
           </div>
 
@@ -238,7 +296,7 @@
           <h2 class="title is-3">📊 Metrics</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
-              The evaluation uses two primary metrics to assess model performance:
+              The evaluation uses <a style="color: #76b900;"><b>two primary metrics</b></a> to assess the model performance:
             </p>
             
             <h4 class="title is-4">Primary Metrics</h4>
@@ -268,13 +326,13 @@
 
             <h4 class="title is-4">Final Score Calculation</h4>
             <p>
-              The final ranking is determined by a weighted combination of both phases:
+              The <a style="color: #76b900;"><b>final ranking</b></a> is determined by a <a style="color: #76b900;"><b>weighted combination</b></a> of both Phase <a style="color: #76b900;"><b>1</b></a> and Phase <a style="color: #76b900;"><b>2</b></a>:
             </p>
             <div style="background-color: #f5f5f5; padding: 15px; border-radius: 8px; text-align: center; font-size: 1.2em; margin: 20px 0;">
-              <strong>Final Score = 0.2 × Score<sub>Phase 1</sub> + 0.8 × Score<sub>Phase 2</sub></strong>
+              <strong>Final Score = 0.2 x Score<sub>Phase 1</sub> + 0.8 x Score<sub>Phase 2</sub></strong>
             </div>
             <p>
-              This weighting emphasizes the importance of robust performance under visual corruptions (Phase 2) while maintaining baseline capabilities on clean images (Phase 1).
+              This weighting aims to emphasize the importance of robust performance under different visual corruptions (Phase 2), while maintaining baseline capabilities on clean images (Phase 1).
             </p>
           </div>
 
@@ -283,7 +341,14 @@
           <h2 class="title is-3">🛠️ Baseline Model</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
-              In this track, we adopt Qwen2.5-VL<sub>7B</sub> as our baseline model. Beyond the provided baseline, participants are encouraged to explore alternative strategies to further boost performance:
+              In this track, we adopt the popular <a style="color: #76b900;"><b>Qwen2.5-VL<sub>7B</sub></b></a> as our baseline model. 
+              The <a style="color: #76b900;"><b>code</b></a> is available and free to use at our GitHub repository: <a target="_blank">https://github.com/robosense2025/track1</a>. 
+            </p>
+            <p>
+              The <a style="color: #76b900;"><b>model weights</b></a> can be downloaded from here: <a target="_blank">https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct</a>.
+            </p>
+            <p>
+              Beyond the provided baseline, participants are free and encouraged to explore alternative strategies to further boost performance:
             </p>
             <ul>
               <li>Retrieval-augmented reasoning</li>
@@ -299,7 +364,7 @@
           <h2 class="title is-3">📊 Baseline Results</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
-              We use Qwen2.5-VL-7B-Instruct as the baseline model. The baseline performance on Phase 1 is as follows:
+              The baseline performance of the <a style="color: #76b900;"><b>Qwen2.5-VL<sub>7B</sub></b></a> model on Phase <a style="color: #76b900;"><b>1</b></a> is as follows:
             </p>
             <div class="table-container">
               <table class="table is-bordered is-striped is-hoverable is-fullwidth">
@@ -346,62 +411,36 @@
                 </tbody>
               </table>
             </div>
-          </div>
 
-          <hr>
-
-          <h2 class="title is-3">🔗 Resources</h2>
-          <div class="content has-text-justified" style="padding-top: 0px">
             <p>
-              We provide the following resources to support the development of models in this track:
+              The baseline performance of the <a style="color: #76b900;"><b>Qwen2.5-VL<sub>7B</sub></b></a> model on Phase <a style="color: #76b900;"><b>2</b></a> is as follows:
             </p>
-            <div class="table-container">
-              <table class="table is-bordered is-striped is-hoverable is-fullwidth">
-                <thead>
-                  <tr>
-                    <th>Resource</th>
-                    <th>Link</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><strong>GitHub Repository</strong></td>
-                    <td><a href="https://github.com/robosense2025/track1" target="_blank">github.com/robosense2025/track1</a></td>
-                  </tr>
-                  <tr>
-                    <td><strong>HuggingFace Dataset</strong></td>
-                    <td><a href="https://huggingface.co/datasets/robosense/datasets" target="_blank">huggingface.co/datasets/robosense/datasets</a></td>
-                  </tr>
-                  <tr>
-                    <td><strong>Baseline Model</strong></td>
-                    <td><a href="https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct" target="_blank">Qwen2.5-VL-7B-Instruct</a></td>
-                  </tr>
-                  <tr>
-                    <td><strong>Related Paper</strong></td>
-                    <td><a href="https://arxiv.org/abs/2501.04003" target="_blank">arXiv:2501.04003</a></td>
-                  </tr>
-                  <tr>
-                    <td><strong>Registration</strong></td>
-                    <td><a href="https://docs.google.com/forms/d/e/1FAIpQLSdwfvk-NHdQh9-REiBLCjHMcyLT-sPCOCzJU-ux5jbcZLTkBg/viewform?usp=sharing&ouid=111184461807593368933" target="_blank">Google Form</a></td>
-                  </tr>
-                  <tr>
-                    <td><strong>Evaluation Server</strong></td>
-                    <td><a href="https://www.codabench.org/competitions/9285/" target="_blank">CodaBench Platform</a></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            <p>
+              <i>To be updated.</i>
+            </p>
+
           </div>
 
+
+
           <hr>
+
+
 
           <h2 class="title is-3">❓ Frequently Asked Questions</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
+
+          <p>
+            Here, we provide a list of Frequently Asked Questions (FAQs) below for better clarity. 
+            If you have additional questions on the details about this competition, please reach out at <a>robosense2025@gmail.com</a>.
+          </p>
+
+          <hr>
             
             <div style="margin-bottom: 25px;">
               <h4 class="title is-5" style="color: #76b900; margin-bottom: 10px;">What VLMs can we use?</h4>
               <p style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; border-left: 4px solid #76b900;">
-                The participants can use any VLMs that are <strong>open-sourced</strong>. Therefore, <code>GPT-4o</code>, <code>Claude 3.5 Sonnet</code>, <code>Gemini 2.0 Pro</code>, etc., are <strong>NOT</strong> allowed.
+                The participants are free to use any VLMs that are <strong>open-sourced</strong>, such as Qwen, Phi, LLaVA, or your own VLMs. However, the closed-source VLMs, including <code>GPT-4o</code>, <code>Claude 3.5 Sonnet</code>, <code>Gemini 2.0 Pro</code>, <code>Grok 4</code>, etc., are <strong>NOT</strong> allowed to use in this track.
               </p>
             </div>
 
@@ -477,6 +516,7 @@
         </div>
       </div>
     </div>
+    <br>
   </section>
 
 
