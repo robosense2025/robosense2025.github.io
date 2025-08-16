@@ -223,7 +223,7 @@
             <hr>
           
             <h4 class="title is-4" style="margin-top: 40px;">
-              Phase <a style="color: #76b900;">#2</a>: Vehicle → Drone &amp; Quadruped Adaptation
+              Phase <a style="color: #76b900;">#2</a>: Adaptation from Vehicle → Drone &amp; Quadruped
             </h4>
             <p>
               <strong>Duration:</strong> August <a style="color: #76b900;"><b>15th</b></a>, 2025 (anytime on earth) - September <a style="color: #76b900;"><b>15th</b></a>, 2025 (anytime on earth)
@@ -256,9 +256,9 @@
             <p>
               <img src="./images/track5/data_example1.png" alt="Track 5 Image" style="max-width: 100%; height: auto;">
             </p>
-            <p>
+            <!-- <p>
               <img src="./images/track5/data_example2.png" alt="Track 5 Image" style="max-width: 100%; height: auto;">
-            </p>
+            </p> -->
           </div>
 
           <hr>
@@ -270,7 +270,7 @@
               <a href="https://arxiv.org/abs/1912.13192" target="_blank" rel="noopener noreferrer">
                 <strong>PV-RCNN</strong>
               </a> 
-              as the base 3D detector, and leverage 
+              as the base 3D object detector, and leverage 
               <a href="https://github.com/CVMI-Lab/ST3D" target="_blank" rel="noopener noreferrer">
                 <strong>ST3D/++</strong>
               </a> 
@@ -402,25 +402,34 @@
                   <tr>
                     <th>Resource</th>
                     <th>Link</th>
-                    <th></th>
+                    <th>Description</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>GitHub</td>
-                    <td><a href="https://github.com/robosense2025/track5" target="_blank">https://github.com/robosense2025/track5</a><td>
+                    <td><strong>GitHub Repository</strong></td>
+                    <td><a href="https://github.com/robosense2025/track5" target="_blank">github.com/robosense2025/track5</a></td>
+                    <td>Baseline code and setup instructions</td>
                   </tr>
                   <tr>
-                    <td>Checkpoint</td>
-                    <td><a href="https://huggingface.co/datasets/robosense/datasets/tree/main/track5-cross-platform-3d-object-detection/pretrained" target="_blank">Huggingface Checkpoint</a><td>
+                    <td><strong>HuggingFace Dataset</strong></td>
+                    <td><a href="https://huggingface.co/datasets/robosense/datasets/tree/main/track5-cross-platform-3d-object-detection" target="_blank">Huggingface Dataset</a></td>
+                    <td>Dataset with training and test splits</td>
                   </tr>
                   <tr>
-                    <td>Dataset</td>
-                    <td><a href="https://huggingface.co/datasets/robosense/datasets/tree/main/track5-cross-platform-3d-object-detection" target="_blank">Huggingface Dataset</a><td>
+                    <td><strong>Baseline Model</strong></td>
+                    <td><a href="https://huggingface.co/datasets/robosense/datasets/tree/main/track5-cross-platform-3d-object-detection/pretrained" target="_blank">Pre-Trained Checkpoint</a></td>
+                    <td>Weights of the baseline model</td>
                   </tr>
                   <tr>
-                    <td>Submit Server</td>
-                    <td><a href="https://www.codabench.org/competitions/9179/" target="_blank">Codabench</a><td>
+                    <td><strong>Registration Form</strong></td>
+                    <td><a href="https://docs.google.com/forms/d/e/1FAIpQLSdwfvk-NHdQh9-REiBLCjHMcyLT-sPCOCzJU-ux5jbcZLTkBg/viewform?usp=sharing&ouid=111184461807593368933" target="_blank">Google Form</a>&nbsp;(Closed on August 15th)</td>
+                    <td>Team registration for the challenge</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Evaluation Server</strong></td>
+                    <td><a href="https://www.codabench.org/competitions/9179/" target="_blank">CodaBench Platform</a></td>
+                    <td>Online evaluation platform</td>
                   </tr>
                 </tbody>
               </table>
@@ -469,6 +478,42 @@
               Answer 3
             </p>
           </div>
+
+
+
+
+
+          <hr>
+
+          <h2 class="title is-3" style="margin-top: 50px;">📖 References</h2>
+          <div class="content has-text-justified" style="padding-top: 0px;">
+            <div style="
+              max-width: 100%;
+              overflow-x: auto;
+              background-color: #f9f9f9;
+              border-radius: 5px;
+              padding: 1em;
+              font-size: 0.9em;
+              box-sizing: border-box;
+            ">
+              <pre style="
+                margin: 0;
+                font-family: monospace;
+                white-space: pre;
+                overflow-x: auto;
+              ">
+@misc{robosense2025track5,
+  title        = {RoboSense Challenge 2025: Track 5 - Cross-Platform 3D Object Detection},
+  author       = {RoboSense Challenge 2025 Organizers},
+  year         = {2025},
+  howpublished = {https://robosense2025.github.io/track5}
+}
+              </pre>
+            </div>
+          </div>
+
+
+
 
 
           <hr>

@@ -178,7 +178,7 @@
 
           <hr>
 
-          <h2 class="title is-3">🎯 Objective</h2>
+          <h2 class="title is-3" style="margin-top: 50px;">🎯 Objective</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
               This track evaluates the capability of VLMs to answer high-level driving questions in complex urban environments. Given question including perception, prediction, and planning, and a multi-view camera input, participants are expected to answer the question given the visual corrupted images.
@@ -189,7 +189,7 @@
           <hr>
 
 
-          <h2 class="title is-3">🗂️ Phases & Requirements</h2>
+          <h2 class="title is-3" style="margin-top: 50px;">🗂️ Phases & Requirements</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
           
             <h4 class="title is-4">Phase <a style="color: #76b900;">#1</a>: Clean Image Evaluation</h4>
@@ -219,7 +219,7 @@
           
             <hr>
           
-            <h4 class="title is-4">Phase <a style="color: #76b900;">#2</a>: Corruption Image Evaluation</h4>
+            <h4 class="title is-4" style="margin-top: 40px;">Phase <a style="color: #76b900;">#2</a>: Corruption Image Evaluation</h4>
             <p>
               <strong>Duration:</strong> August <a style="color: #76b900;"><b>15th</b></a>, 2025 (anytime on earth) - September <a style="color: #76b900;"><b>15th</b></a>, 2025 (anytime on earth)
             </p>
@@ -245,7 +245,7 @@
 
           <hr>
 
-          <h2 class="title is-3">🚗 Dataset Examples</h2>
+          <h2 class="title is-3" style="margin-top: 50px;">🚗 Dataset Examples</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
               <img src="./images/track1/data_example1.png" alt="Track 1 Image" style="max-width: 100%; height: auto;">
@@ -263,7 +263,7 @@
 
           <hr>
 
-          <h2 class="title is-3">📊 Metrics</h2>
+          <h2 class="title is-3" style="margin-top: 50px;">📊 Metrics</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
               The evaluation uses <a style="color: #76b900;"><b>two primary metrics</b></a> to assess the model performance:
@@ -294,7 +294,10 @@
               </table>
             </div>
 
-            <h4 class="title is-4">Final Score Calculation</h4>
+
+            <hr>
+
+            <h4 class="title is-4" style="margin-top: 50px;">Final Score Calculation</h4>
             <p>
               The <a style="color: #76b900;"><b>final ranking</b></a> is determined by a <a style="color: #76b900;"><b>weighted combination</b></a> of both Phase <a style="color: #76b900;"><b>1</b></a> and Phase <a style="color: #76b900;"><b>2</b></a>:
             </p>
@@ -308,7 +311,7 @@
 
           <hr>
 
-          <h2 class="title is-3">🛠️ Baseline Model</h2>
+          <h2 class="title is-3" style="margin-top: 50px;">🛠️ Baseline Model</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
               In this track, we adopt the popular <a style="color: #76b900;"><b>Qwen2.5-VL<sub>7B</sub></b></a> as our baseline model. 
@@ -331,7 +334,7 @@
 
           <hr>
 
-          <h2 class="title is-3">📊 Baseline Results</h2>
+          <h2 class="title is-3" style="margin-top: 50px;">📊 Baseline Results</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
               The baseline performance of the <a style="color: #76b900;"><b>Qwen2.5-VL<sub>7B</sub></b></a> model on Phase <a style="color: #76b900;"><b>1</b></a> is as follows:
@@ -396,7 +399,7 @@
 
           <hr>
 
-          <h2 class="title is-3">🔗 Resources</h2>
+          <h2 class="title is-3" style="margin-top: 50px;">🔗 Resources</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
               We provide the following resources to support the development of models in this track:
@@ -460,7 +463,7 @@
 
           <hr>
 
-          <h2 class="title is-3">❓ Frequently Asked Questions</h2>
+          <h2 class="title is-3" style="margin-top: 50px;">❓ Frequently Asked Questions</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
 
           <p>
@@ -477,6 +480,8 @@
               </p>
             </div>
 
+            <hr>
+
             <div style="margin-bottom: 25px;">
               <h4 class="title is-5" style="color: #76b900; margin-bottom: 10px;">What should I submit for reproducibility?</h4>
               <p style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; border-left: 4px solid #76b900;">
@@ -487,12 +492,16 @@
               </p>
             </div>
 
+            <hr>
+
             <div style="margin-bottom: 25px;">
               <h4 class="title is-5" style="color: #76b900; margin-bottom: 10px;">Why are the evaluation results different using the same prediction file?</h4>
               <p style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; border-left: 4px solid #76b900;">
                 We use LLM to evaluate open-ended questions. The MCQs result should the the same, while open-ended questions might vary within a small numerical range.
               </p>
             </div>
+
+            <hr>
 
             <div style="margin-bottom: 25px;">
               <h4 class="title is-5" style="color: #76b900; margin-bottom: 10px;">Can we modify the prompt?</h4>
@@ -501,11 +510,47 @@
               </p>
             </div>
 
+            <hr>
+
             <div style="margin-bottom: 25px;">
               <h4 class="title is-5" style="color: #76b900; margin-bottom: 10px;">Can we use external models?</h4>
               <p style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; border-left: 4px solid #76b900;">
                 No. This competition is intended to evaluate the <strong>capabilities of VLMs</strong> specifically. The use of task-specific models (e.g., object detectors, trajectory predictors) that directly address the task or provide extra information to the VLMs is <strong>NOT</strong> allowed. Modification within the VLM architectures is allowed, such as the vision encoder.
               </p>
+            </div>
+          </div>
+
+          
+
+
+
+
+          <hr>
+
+          <h2 class="title is-3" style="margin-top: 50px;">📖 References</h2>
+          <div class="content has-text-justified" style="padding-top: 0px;">
+            <div style="
+              max-width: 100%;
+              overflow-x: auto;
+              background-color: #f9f9f9;
+              border-radius: 5px;
+              padding: 1em;
+              font-size: 0.9em;
+              box-sizing: border-box;
+            ">
+              <pre style="
+                margin: 0;
+                font-family: monospace;
+                white-space: pre;
+                overflow-x: auto;
+              ">
+@misc{robosense2025track1,
+  title        = {RoboSense Challenge 2025: Track 1 - Driving with Language},
+  author       = {RoboSense Challenge 2025 Organizers},
+  year         = {2025},
+  howpublished = {https://robosense2025.github.io/track1}
+}
+              </pre>
             </div>
           </div>
 

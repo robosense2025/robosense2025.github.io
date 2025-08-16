@@ -177,7 +177,7 @@
 
           <hr>
 
-          <h2 class="title is-3">🎯 Objective</h2>
+          <h2 class="title is-3" style="margin-top: 50px;">🎯 Objective</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
               This track evaluates an agent's ability to perform <strong>socially compliant navigation</strong> in dynamic indoor environments populated with realistic human agents. Participants must design navigation policies based solely on <strong>RGBD observations and odometry</strong>, without access to global maps or privileged information.
@@ -196,7 +196,7 @@
 
           <hr>
 
-          <h2 class="title is-3">🗂️ Phases & Requirements</h2>
+          <h2 class="title is-3" style="margin-top: 50px;">🗂️ Phases & Requirements</h2>
           <div class="has-text-justified">
             <p style="margin-bottom: 1em;">All times mentioned are in the <strong>Anywhere on Earth (AoE)</strong> timezone (UTC-12).</p>
             <h4 class="title is-4">Minival Phase: Sanity Check</h4>
@@ -225,7 +225,7 @@
 
 
 
-            <hr>
+            <hr style="margin-top: 40px;">
 
             <h4 class="title is-4">Phase <a style="color: #76b900;">#1</a>: Public Evaluation</h4>
             <p style="margin-bottom: 1em;">
@@ -252,7 +252,7 @@
 
 
 
-            <hr>
+            <hr style="margin-top: 40px;">
         
             <h4 class="title is-4">Phase <a style="color: #76b900;">#2</a>: Final Evaluation</h4>
             <p style="margin-bottom: 1em;">
@@ -274,7 +274,7 @@
             <l style="margin-bottom: 1em;">
               <li>Submit your final model and code for evaluation on the private test set</li>
               <li>Confirm the submission have been evaluated on the <strong>private</strong> leaderboard</li>
-              <li>Final rankings and awards will be determined based on Phase II results</li>
+              <li>Final rankings and awards will be determined based on Phase #2 results</li>
               <li>Awarded teams need to provide a technical report detailing your methodology and innovations</li>
             </ul>
             
@@ -286,7 +286,7 @@
 
           <hr>
 
-          <h2 class="title is-3">🗄️ Dataset</h2>
+          <h2 class="title is-3" style="margin-top: 50px;">🗄️ Dataset</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
               The track uses the <strong>RoboSense Track 2 Social Navigation Dataset</strong>, based on the Social-HM3D benchmark. 
@@ -326,7 +326,9 @@
           </div>
           
           
-          <h3 class="title is-4" style="margin-top: 30px;">🎬 Dataset Examples</h3>
+          <hr>
+
+          <h3 class="title is-4" style="margin-top: 50px;">🎬 Dataset Examples</h3>
           <p style="margin-bottom: 15px;">
             We showcase some classic encounter episodes in the benchmark. These require the robot to proactively avoid the human using socially-aware behaviors.
           </p>
@@ -374,7 +376,7 @@
 
           <hr>
 
-          <h2 class="title is-3">📊 Evaluation Metrics</h2>
+          <h2 class="title is-3" style="margin-top: 50px;">📊 Evaluation Metrics</h2>
           <p>Our benchmark focuses on two key aspects: <strong>task completion</strong> and <strong>social compliance</strong>.</p>
 
           <table>
@@ -417,9 +419,11 @@
             The <a style="color: #76b900;"><b>final rankings</b></a> will be determined by the results from <strong>Phase #2</strong> only. Rankings are based on the <strong>Total Score</strong>, with ties broken by the higher <strong>Success Rate (SR)</strong>.
           </p>
 
+
+
           <hr>
 
-          <h2 class="title is-3">🛠️ Baseline Model</h2>
+          <h2 class="title is-3" style="margin-top: 50px;">🛠️ Baseline Model</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
               The baseline model is built upon the <strong>Falcon</strong> framework, which integrates the following core components:
@@ -439,7 +443,7 @@
 
           <hr>
 
-          <h2 class="title is-3">📊 Baseline Results</h2>
+          <h2 class="title is-3" style="margin-top: 50px;">📊 Baseline Results</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
               The Falcon baseline achieves the following performance on Phase #1 using <strong>Social-HM3D</strong> (~1,000 test episodes):
@@ -475,7 +479,7 @@
 
           <hr>
 
-          <h2 class="title is-3">🔗 Resources</h2>
+          <h2 class="title is-3" style="margin-top: 50px;">🔗 Resources</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
               We provide the following resources to support the development of models in this track:
@@ -540,7 +544,7 @@
 
           <hr>
 
-          <h2 class="title is-3">❓ Frequently Asked Questions</h2>
+          <h2 class="title is-3" style="margin-top: 50px;">❓ Frequently Asked Questions</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
 
           <p>
@@ -620,20 +624,20 @@
             <hr>
             
             <h4 class="title is-5" style="color: #76b900; margin-bottom: 10px;">
-              What are the differences between Phase I and Phase II?
+              What are the differences between Phase 1 and Phase 2?
             </h4>
             <div style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; border-left: 4px solid #76b900;">
               <p style="margin-bottom: 10px;">
                 All submissions are evaluated inside Docker images with the following versions:
               </p>
               <ul style="margin-left: 20px; margin-bottom: 15px;">
-                <li><strong>Phase I</strong>: <code>docker pull zeyinggong/robosense_socialnav:v0.5</code></li>
-                <li><strong>Phase II</strong>: <code>docker pull zeyinggong/robosense_socialnav:v0.7</code></li>
+                <li><strong>Phase 1</strong>: <code>docker pull zeyinggong/robosense_socialnav:v0.5</code></li>
+                <li><strong>Phase 2</strong>: <code>docker pull zeyinggong/robosense_socialnav:v0.7</code></li>
               </ul>
               <p style="margin-bottom: 10px;"><strong>Key Changes in v0.7</strong>:</p>
               <ol style="margin-left: 20px; margin-bottom: 15px;">
                 <li><strong>Fixed driver compatibility issues</strong> due to EGL errors</li>
-                <li><strong>Multi-environment support</strong>: Phase II supports up to 8 environments for evaluation</li>
+                <li><strong>Multi-environment support</strong>: Phase 2 supports up to 8 environments for evaluation</li>
                 <li><strong>Updated action space</strong>: The action set has been refined to clearly distinguish between <strong>stopping</strong> <em>(ending an episode)</em> and <strong>pausing</strong> <em>(remaining stationary)</em>. A new <strong>move_backward</strong> action is also introduced.</li>
               </ol>
               <div style="background-color: #ffffff; padding: 12px; border-radius: 4px; font-family: monospace; border: 1px solid #ddd; margin-bottom: 10px;">
@@ -644,7 +648,7 @@
                 4 - move_backward&nbsp;&nbsp;&nbsp;# newly added action for moving backward<br>
                 5 - pause&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# newly added action for pausing without movement
               </div>
-              <p>This action space is fully backward-compatible with Phase I methods.</p>
+              <p>This action space is fully backward-compatible with Phase 1 methods.</p>
             </div>
 
             <hr>
@@ -654,7 +658,7 @@
             </h4>
             <div style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; border-left: 4px solid #76b900;">
               <p style="margin-bottom: 10px;">
-                <strong>For Phase II</strong>, we recommend using Docker image v0.7 for local testing:
+                <strong>For Phase 2</strong>, we recommend using Docker image v0.7 for local testing:
               </p>
               <div style="background-color: #ffffff; padding: 12px; border-radius: 4px; font-family: monospace; border: 1px solid #ddd; margin-bottom: 15px;">
                 docker run --rm -it \<br>
@@ -671,7 +675,7 @@
                 <strong>Tip</strong>: Refer to the provided <a href="https://drive.google.com/file/d/1k5tMeocASZhCUL2SFUILqWTszNRYjC4L/view?usp=sharing" target="_blank" style="color: #76b900;">Baseline ZIP Submission Example (Updated)</a> for reference.
               </p>
               <p>
-                <strong>Note</strong>: Phase II does not support action submissions since the test dataset is not publicly available.
+                <strong>Note</strong>: Phase 2 does not support action submissions since the test dataset is not publicly available.
               </p>
             </div>
 
@@ -682,9 +686,9 @@
             </h4>
             <div style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; border-left: 4px solid #76b900;">
               <ul style="margin-left: 20px; margin-bottom: 15px;">
-                <li><strong>Minival Phase</strong>: 5–10 minutes</li>
-                <li><strong>Phase I Full Evaluation</strong>: 3–5 hours (depending on queue length and inference runtime)</li>
-                <li><strong>Phase II Full Evaluation</strong>: 2–4 hours (depending on number of environments used, queue length, and inference runtime)</li>
+                <li><strong>Minival Phase</strong>: 5-10 minutes</li>
+                <li><strong>Phase 1 Full Evaluation</strong>: 3-5 hours (depending on queue length and inference runtime)</li>
+                <li><strong>Phase 2 Full Evaluation</strong>: 2-4 hours (depending on number of environments used, queue length, and inference runtime)</li>
               </ul>
               <p style="margin-bottom: 10px;">
                 If your submission remains pending for over 48 hours, please:
