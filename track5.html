@@ -175,7 +175,7 @@
 
           <hr>
 
-          <h2 class="title is-3">🎯 Objective</h2>
+          <h2 class="title is-3" style="margin-top: 50px;">🎯 Objective</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
               As robotics continues to advance, LiDAR-based 3D object detection has become a focal point in both academia and industry. However, most existing datasets and methods target vehicle platforms, overlooking quadrupeds and drones.  
@@ -183,8 +183,8 @@
             </p>
             <ol>
               <li style="margin-bottom: 0.75rem;">
-                Build on three platforms - <strong>vehicles</strong>, <strong>drones</strong>, and <strong>quadruped robots</strong> - to foster innovations in a unified LiDAR-based 3D object detection framework;
-              </li>
+                Build on three robot platforms - <a style="color: #76b900;"><strong>vehicles</strong><a style="color: #76b900;"></a>, <a style="color: #76b900;"><strong>drones</strong></a>, and <a style="color: #76b900;"><strong>quadruped robots</strong></a> - to foster innovations in a unified LiDAR-based 3D object detection framework;
+              </li></a>
               <li style="margin-bottom: 0.75rem;">
                 Bridge geometric and data distribution disparities to achieve rapid knowledge transfer and model adaptation across different robot platforms;
               </li>
@@ -200,46 +200,50 @@
 
           <hr>
 
-          <h2 class="title is-3">🗂️ Phases & Requirements</h2>
+          <h2 class="title is-3" style="margin-top: 50px;">
+            🗂️ Phases & Requirements
+          </h2>
           <div class="content has-text-justified" style="padding-top: 0px">
           
-            <h4 class="title is-4">Phase 1: Vehicle → Drone Adaptation</h4>
+            <h4 class="title is-4">Phase <a style="color: #76b900;">#1</a>: Adaptation from Vehicle → Drone</h4>
             <p>
-              <strong>Duration:</strong> 15 June 2025 – 15 August 2025
+              <strong>Duration:</strong> June <a style="color: #76b900;"><b>15th</b></a>, 2025 (anytime on earth) - August <a style="color: #76b900;"><b>15th</b></a>, 2025 (anytime on earth)
             </p>
             <p>
-              <strong>Setup:</strong>
+              <strong>Settings:</strong>
             </p>
             <ul>
-              <li><strong>Source platform:</strong> Vehicle LiDAR scans <strong>with</strong> 3D bounding-box annotations</li>
-              <li><strong>Target platform:</strong> Unlabeled Drone LiDAR scans</li>
+              <li><strong>Source platform:</strong> LiDAR scans with 3D bounding-box annotations from the <a style="color: #76b900;"><b>Vehicle</b></a> platform</li>
+              <li><strong>Target platform:</strong> Unlabeled LiDAR scans from the <a style="color: #76b900;"><b>Drone</b></a> platform</li>
             </ul>
             <p>
-              <strong>Ranking Metric:</strong> AP@0.50 (R40) for the <strong>Car</strong> class evaluated on Drone data
+              <strong>Ranking Metric:</strong> AP@0.50 (R40) for the <strong>Car</strong> class evaluated on Drone data.
             </p>
           
             <hr>
           
-            <h4 class="title is-4">Phase 2: Vehicle → Drone &amp; Quadruped Adaptation</h4>
+            <h4 class="title is-4" style="margin-top: 40px;">
+              Phase <a style="color: #76b900;">#2</a>: Vehicle → Drone &amp; Quadruped Adaptation
+            </h4>
             <p>
-              <strong>Duration:</strong> 15 August 2025 – 15 September 2025
+              <strong>Duration:</strong> August <a style="color: #76b900;"><b>15th</b></a>, 2025 (anytime on earth) - September <a style="color: #76b900;"><b>15th</b></a>, 2025 (anytime on earth)
             </p>
             <p>
-              <strong>Setup:</strong>
+              <strong>Settings:</strong>
             </p>
             <ul>
-              <li><strong>Source platform:</strong> Vehicle LiDAR scans with annotations</li>
-              <li><strong>Target platforms:</strong> Unlabeled Drone and Quadruped LiDAR scans</li>
+              <li><strong>Source platform:</strong> LiDAR scans with 3D bounding-box annotations from the <a style="color: #76b900;"><b>Vehicle</b></a> platform</li>
+              <li><strong>Target platforms:</strong> Unlabeled LiDAR scans from the <a style="color: #76b900;"><b>Drone</b></a> platform and the <a style="color: #76b900;"><b>Quadruped</b></a> platform</li>
             </ul>
             <p>
-              <strong>Ranking Metric:</strong> Weighted score combining:
+              <strong>Ranking Metric:</strong> A weighted score combining:
             </p>
             <ul>
               <li>AP@0.50 (R40) for the <strong>Car</strong> class</li>
               <li>AP@0.50 (R40) for the <strong>Pedestrian</strong> class</li>
             </ul>
             <p>
-              (Scores computed across both Drone and Quadruped platforms.)
+              Note: Scores computed across both Drone and Quadruped platforms.
             </p>
           
           </div>
@@ -247,7 +251,7 @@
 
           <hr>
 
-          <h2 class="title is-3">🚗 Dataset Examples</h2>
+          <h2 class="title is-3" style="margin-top: 50px;">🚗 Dataset Examples</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
               <img src="./images/track5/data_example1.png" alt="Track 5 Image" style="max-width: 100%; height: auto;">
@@ -259,7 +263,7 @@
 
           <hr>
 
-          <h2 class="title is-3">🛠️ Baseline Model</h2>
+          <h2 class="title is-3" style="margin-top: 50px;">🛠️ Baseline Model</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
               In this track, we adopt 
@@ -288,9 +292,9 @@
 
           <hr>
 
-          <h2 class="title is-3">📊 Baseline Results</h2>
+          <h2 class="title is-3" style="margin-top: 50px;">📊 Baseline Results</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
-            <h3 class="title is-3">Phase 1 Results</h3>
+            <h4 class="title is-4">Phase 1 Results</h4>
             <div class="table-container">
               <table class="table is-bordered is-striped is-hoverable is-fullwidth">
                 <thead>
@@ -334,7 +338,9 @@
               </table>
             </div>
 
-            <h3 class="title is-3">Phase 2 Results</h3>
+            <hr>
+
+            <h4 class="title is-4">Phase 2 Results</h4>
             <div class="table-container">
               <table class="table is-bordered is-striped is-hoverable is-fullwidth">
                 <thead>
@@ -385,7 +391,7 @@
 
           <hr>
 
-          <h2 class="title is-3">🔗 Resources</h2>
+          <h2 class="title is-3" style="margin-top: 50px;">🔗 Resources</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
               We provide the following resources to support the development of models in this track:
@@ -427,7 +433,7 @@
 
           <hr>
 
-          <h2 class="title is-3">❓ Frequently Asked Questions</h2>
+          <h2 class="title is-3" style="margin-top: 50px;">❓ Frequently Asked Questions</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
 
           <p>
