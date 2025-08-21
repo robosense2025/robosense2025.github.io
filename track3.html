@@ -194,7 +194,7 @@
           <div class="content has-text-justified" style="padding-top: 0px">
             <h4 class="title is-4">Phase <a style="color: #76b900;">#1</a>: Development & Validation</h4>
             <p>
-              <strong>Duration:</strong> June <a style="color: #76b900;"><b>15th</b></a>, 2025 (anytime on earth) - August <a style="color: #76b900;"><b>15th</b></a>, 2025 (anytime on earth)
+              <strong>Duration:</strong> June <a style="color: #76b900;"><b>15th</b></a>, 2025 (Anywhere on Earth) - August <a style="color: #76b900;"><b>15th</b></a>, 2025 (Anywhere on Earth)
             </p>
             <p>
               In this phase, participants are provided with the <strong>training</strong> and <strong>validation</strong>
@@ -210,7 +210,7 @@
 
             <h4 class="title is-4" style="margin-top: 40px;">Phase <a style="color: #76b900;">#2</a>: Testing & Submission</h4>
             <p>
-              <strong>Duration:</strong> August <a style="color: #76b900;"><b>15th</b></a>, 2025 (anytime on earth) - September <a style="color: #76b900;"><b>15th</b></a>, 2025 (anytime on earth)
+              <strong>Duration:</strong> August <a style="color: #76b900;"><b>15th</b></a>, 2025 (Anywhere on Earth) - September <a style="color: #76b900;"><b>15th</b></a>, 2025 (Anywhere on Earth)
             </p>
             <p>
               In the second phase, participants will have access to a <strong>test</strong> dataset with LiDAR placements
@@ -245,7 +245,7 @@
           <h2 class="title is-3" style="margin-top: 50px;">🛠️ Baseline Model</h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
-              In this track, BEVFusion-L is used as the baseline method. Participants may choose to build upon it or
+              In this track, BEVFusion-L is designated as the baseline method. Participants may choose to build upon the baseline or
               develop their own approaches independently. Detailed environment setup and experimental protocols can be found in the
               <a href="https://github.com/robosense2025/track3" target="_blank" rel="noopener noreferrer"><strong>Track3 GitHub repository</strong></a>.
             </p>
@@ -262,20 +262,26 @@
               <table class="table is-bordered is-striped is-hoverable is-fullwidth">
                 <thead>
                   <tr>
-                    <th>Metric</th>
-                    <th>Metric 1</th>
-                    <th>Metric 2</th>
-                    <th>Metric 3</th>
-                    <th>Metric 4</th>
+                    <th>Method</th>
+                    <th>mAP</th>
+                    <th>mATE</th>
+                    <th>mASE</th>
+                    <th>mAOE</th>
+                    <th>mAVE</th>
+                    <th>mAAE</th>
+                    <th>NDS</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Baseline Model</td>
-                    <td>x.xx</td>
-                    <td>x.xx</td>
-                    <td>x.xx</td>
-                    <td>x.xx</td>
+                    <td>BEVFusion-L</td>
+                    <td>0.6051</td>
+                    <td>0.1210</td>
+                    <td>0.1235</td>
+                    <td>1.1638</td>
+                    <td>2.2521</td>
+                    <td>0.3983</td>
+                    <td>0.5383</td>
                   </tr>
                 </tbody>
               </table>
@@ -310,17 +316,17 @@
                     <td>Dataset with training and test splits</td>
                   </tr>
                   <tr>
-                    <td>Checkpoint</td>
+                    <td><strong>Checkpoint</strong></td>
                     <td><a href="https://huggingface.co/datasets/robosense/datasets/blob/main/track3-sensor-placement/baseline.pth" target="_blank">Pre-Trained Model</a></td>
                     <td>Weights of the baseline model</td>
                   </tr>
                   <tr>
-                    <td>Registration</td>
+                    <td><strong>Registration</strong></td>
                     <td><a href="https://docs.google.com/forms/d/e/1FAIpQLSdwfvk-NHdQh9-REiBLCjHMcyLT-sPCOCzJU-ux5jbcZLTkBg/viewform?usp=sharing&ouid=111184461807593368933" target="_blank">Google Form</a>&nbsp;(Closed on August 15th)</td>
                     <td>Team registration for the challenge</td>
                   </tr>
                   <tr>
-                    <td>Submission Portal</td>
+                    <td><strong>Submission Portal</strong></td>
                     <td><a href="https://www.codabench.org/competitions/9284/" target="_blank">CodaBench Platform</a></td>
                     <td>Online evaluation platform</td>
                   </tr>
@@ -347,28 +353,30 @@
             
           <div style="margin-bottom: 25px;">
             <h4 class="title is-5" style="color: #76b900; margin-bottom: 10px;">
-              Question 1
+              Can we use multi-modal (e.g., camera–LiDAR fusion) methods?
             </h4>
             <p style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; border-left: 4px solid #76b900;">
-              Answer 1
+              No. <a style="color: #76b900;"><b>Only</b></a> LiDAR data may be used for model training and evaluation.
+              Camera data is provided solely for visualization and must <a style="color: #76b900;"><b>not</b></a> be used for either training or evaluation.
             </p>
           </div>
 
           <div style="margin-bottom: 25px;">
             <h4 class="title is-5" style="color: #76b900; margin-bottom: 10px;">
-              Question 2
+              Can we use external data for pre-training, or employ pre-trained models?
             </h4>
             <p style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; border-left: 4px solid #76b900;">
-              Answer 2
+              No. You may only use the data provided by the competition for model training.
             </p>
           </div>
 
           <div style="margin-bottom: 25px;">
             <h4 class="title is-5" style="color: #76b900; margin-bottom: 10px;">
-              Question 3
+              How are competition scores ranked?
             </h4>
             <p style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; border-left: 4px solid #76b900;">
-              Answer 3
+              Rankings are determined primarily by mAP. 
+              If the difference in mAP between submissions is within 0.01 (1%), then NDS will be used as a secondary criterion to break ties.
             </p>
           </div>
 
